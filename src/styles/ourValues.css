@@ -1,0 +1,123 @@
+.values-container {
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.value-circle {
+  position: absolute;
+  font-size: 2rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  z-index: 15;
+}
+
+.value-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.value-circle.hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.center-logo {
+  position: absolute;
+  font-size: 32px;
+  font-weight: bold;
+  color: #000000; /* tu cambio */
+  z-index: 0;
+  text-align: center;
+}
+
+.value-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.value-overlay.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+  max-width: 80%;
+  transform: translateY(20px);
+  animation: slideIn 0.6s forwards;
+}
+
+.overlay-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+
+.overlay-content p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.overlay-content img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.ourValues-container {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.ourValues-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  display: inline-block;
+  color: #000000;
+}
+
+.ourValues-title::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px; 
+  height: 3px;
+  background: #cdf26a;
+  bottom: -10px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

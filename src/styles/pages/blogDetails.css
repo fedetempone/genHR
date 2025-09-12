@@ -1,0 +1,71 @@
+/* hero del BlogDetails (reutilizo algunas clases de Blog.jsx para que quede mejor) */
+.blog-hero {
+    background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
+    min-height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.blog-hero-title {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.blog-hero-title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 20%;
+    height: 3px;
+    background: #cdf26a;
+    top: 56px;
+    left: 0;
+    right: 0;
+    margin: 50px auto auto auto;
+}
+
+.blog-hero-description-container {
+    margin-top: 100px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* contenido detallado del post */
+.blog-details-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    background-color: #fff;
+}
+
+.blog-details-text p {
+    margin-bottom: 1.5rem;
+}
+
+.blog-details-text {
+    width: 75%;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .blog-details-content {
+        padding: 0 1rem;
+    }
+
+    .blog-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .blog-hero-description-container {
+        font-size: 1rem;
+        margin-top: 60px;
+    }
+}

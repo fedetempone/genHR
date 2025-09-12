@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Lora', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: #171D35;
+  background-color: #171D35 ; 
+}
+
+h1, h2 {
+  font-family: var(--font-primary);
+  font-weight: 700; 
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 400; 
+}
+
+p, span, a, li {
+  font-family: var(--font-primary);
+  font-weight: 400; 
+}
+
+button {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  background-color: var(--color-lila);
+  color: var(--color-blanco);
+}
