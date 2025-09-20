@@ -147,6 +147,8 @@
   border: none;
   background-size: 120% auto;
   background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 75%);
+  text-align: center;
+  text-decoration: none;
 }
 
 .css-button-gradient--6:hover {
@@ -158,11 +160,70 @@
 }
 
 .button-view-more-hero-section {
-  font-size: 1.3rem;
-  margin-top: 60px;
+  font-size: 1.2rem;
+  margin-top: 200px;
   letter-spacing: 1px;
-  height: 46px;
+  height: 39px;
 }
+
+/* QUOTE CONTAINER */
+
+.quote-container {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.quote-mark-right {
+  position: absolute;
+  top: 83px;
+  right: 0px;
+  font-size: 10rem;
+  color: #CDF26A;
+  line-height: 0.8;
+  font-family: serif;
+  font-weight: bold;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.quote-text {
+  position: relative;
+  font-size: 2.2rem;
+  color: #fff;
+  line-height: 1.4;
+  z-index: 2;
+}
+
+.quote-text strong {
+  font-weight: bold;
+}
+
+.quote-target {
+  position: relative;
+  display: inline-block;
+}
+
+.quote-target::before {
+  content: "“";
+  position: absolute;
+  left: -42px;
+  top: -80px;
+  font-size: 11rem;
+  color: #B783EF;
+  font-family: serif;
+  font-weight: bold;
+  z-index: -1;
+}
+
+
 
 .waves-wrapper {
   width: 100%;
@@ -171,10 +232,6 @@
   margin-top: 50px;
   position: relative;
   z-index: 5;
-}
-
-.waves-container {
-  margin-top: 100px;
 }
 
 /* responsive */
@@ -195,6 +252,32 @@
   .hero-header {
     flex-direction: column;
   }
+
+  .button-view-more-hero-section {
+    margin-top: 100px;
+  }
+
+  .quote-container {
+    max-width: 90%;
+  }
+
+
+  .quote-text {
+    font-size: 2rem;
+  }
+
+  .quote-mark-left {
+    font-size: 6rem;
+  }
+
+  .quote-mark-right {
+    font-size: 9rem;
+  }
+
+  .quote-mark-left {
+    top: 15px;
+    left: 40px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -205,16 +288,60 @@
   .hero-text h1 {
     font-size: 1.5rem;
   }
+
+  .quote-text {
+    font-size: 1rem;
+  }
+
+  .quote-mark-left {
+    font-size: 60px;
+  }
+
+  .quote-mark-right {
+    font-size: 4rem;
+  }
+
+  .quote-target::before {
+    font-size: 4rem;
+    left: -17px;
+    top: -26px;
+  }
+
+  .quote-container {
+    max-width: 80%;
+  }
+
+  .quote-mark-right {
+    font-size: 4rem;
+    top: 52px;
+    right: 33px;
+  }
+
+  .hero-logo {
+    width: 126px;
+    height: 120px;
+    margin: 0px auto;
+  }
+
+  .logo-shadow {
+    width: 30%;
+  }
 }
 
 @media (max-width: 400px) {
-  .hero-section {
-    min-width: 325px;
-  }
-
   .css-button-gradient--6 {
     min-width: 79px;
     height: 24px;
     font-size: 10px;
   }
+
+  .quote-text {
+    font-size: 1rem;
+  }
+
+  .quote-mark-left {
+    font-size: 4rem;
+  }
+
 }
+

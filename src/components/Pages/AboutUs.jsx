@@ -28,7 +28,7 @@ const AboutUs = () => {
     // desplazamiento horizontal del path
     gsap.to(pathRef.current, {
       duration: 2,
-      x: 100, // mueve el path 100px a la derecha
+      x: 100, 
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut"
@@ -41,10 +41,13 @@ const AboutUs = () => {
         <div className="about-us-content">
           <h2 className="about-us-title">Quiénes Somos</h2>
           <p className="about-us-text">
-            Somos una consultora especializada en la gestión del talento humano.
-            Nos dedicamos a optimizar los procesos de selección, capacitación y desarrollo del personal,
-            adaptándonos a las necesidades específicas de cada empresa.
+            En genHR acompañamos a pymes y startups en la gestión y desarrollo de su talento.<br />
+            No somos una consultora tradicional: somos un equipo que combina experiencia y cercanía.<br />
+            Nos involucramos de verdad en el día a día de cada empresa, para diseñar soluciones que se ajustan a su realidad y evolucionan con ella.<br />
+            Contamos con más de 10 años de experiencia en Recursos Humanos, metodologías ágiles y cultura organizacional.<br />
+            Nuestro propósito es claro: impulsar el crecimiento de tu negocio poniendo a las personas en el centro.
           </p>
+
         </div>
         <div className="about-us-image-wrapper">
           {/* imagen con clip-path para desktop */}
@@ -57,12 +60,12 @@ const AboutUs = () => {
                 />
               </clipPath>
             </defs>
-            <image xlinkHref="/img/AboutUs2.png" width="500" height="500" clipPath="url(#clip)" preserveAspectRatio="xMidYMid slice" />
+            <image xlinkHref="/img/AboutUs5.png" width="500" height="500" clipPath="url(#clip)" preserveAspectRatio="xMidYMid slice" />
           </svg>
 
           {/* imagen normal para mobile */}
-          <img className="about-us-image-mobile" src="/img/AboutUs2.png" alt="Quiénes somos" />
-        </div>  
+          <img className="about-us-image-mobile" src="/img/AboutUs5.png" alt="Quiénes somos" />
+        </div>
       </div>
     </div>
   );

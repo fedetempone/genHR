@@ -15,7 +15,7 @@ const Layout = ({ children, darkMode = false, title = "Gen-HR | Consultora" }) =
       </Helmet>
 
       {/* navbar */}
-      <Nav darkMode={darkMode} />
+      <Nav />
 
       {/* contenido de la pagina */}
       <main>{children}</main>

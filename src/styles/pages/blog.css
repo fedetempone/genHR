@@ -102,7 +102,7 @@
 }
 
 /* responsive */
-@media (max-width: 768px) {
+@media (max-width: 999px) {
     .blog-grid {
         gap: 2rem;
     }
@@ -122,3 +122,4 @@
         transform: translateX(0); /* no desplazamiento lateral en moviles */
     }
 }
+

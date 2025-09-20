@@ -63,7 +63,7 @@ export default function OurValues() {
     setTimeout(() => {
       setShowOverlay(false);
       setActiveValue(null);
-    }, 2500);
+    }, 3000);
   };
 
   return (
@@ -79,9 +79,6 @@ export default function OurValues() {
             <div className="overlay-content">
               <h2>{activeValue.name}</h2>
               <p>{activeValue.description}</p>
-              {activeValue.img && (
-                <img src={activeValue.img} alt={activeValue.name} />
-              )}
             </div>
           </div>
         )}
@@ -101,7 +98,7 @@ export default function OurValues() {
 
           const minRadius = 0;
           const maxRadius = Math.min(
-            200,
+            300,
             containerWidth / 2 - 80,
             containerHeight / 2 - 80
           );
@@ -121,11 +118,20 @@ export default function OurValues() {
               }}
               onClick={() => handleClick(val)}
             >
-              {val.name[0]}
+              {val.name}
             </div>
           );
         })}
-      {/* aca puedo agregar un div y un texto dentro de ese div y queda centrado dentro de los circulos */}
+      </div>
+
+      <div className="ourValues-description">
+        <div className="quote-wrapper">
+          <span className="quote-mark-ourValues">*</span>
+          <p>
+            Siempre con foco en lo que importa: equipos motivados, líderes preparados y negocios que evolucionan.
+          </p>
+          <span className="quote-mark-ourValues">*</span>
+        </div>
       </div>
     </section>
   );

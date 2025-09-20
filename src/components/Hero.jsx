@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import "../styles/hero.css";
 import "../styles/waves.css";
 import Waves from "./Waves";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const logoRef = useRef(null);
@@ -41,28 +42,32 @@ const Hero = () => {
           <div className="logo-wrapper">
             <img
               ref={logoRef}
-              src="/img/logoHeroTransparentGreen.png"
+              src="/img/logoHeroTransparentWhite.png"
               alt="Logo genHR"
               className="hero-logo"
             />
             <div ref={shadowRef} className="logo-shadow"></div>
           </div>
+          {/* DIV CON EL CODIGO DE LA IMAGEN */}
+          <div className="quote-container">
+            {/* <span className="quote-mark-left">“</span> */}
+            {/* <div className="quote-text">
+              Equipos que la rompen,<br />
+              marcas que <strong>inspiran</strong>.
+            </div> */}
 
-          <div className="hero-text">
-            <h1>genHR</h1>
-            <p>
-              Somos el socio estratégico de startups y pymes en crecimiento, acompañándolas en sus procesos de transformación sin que pierdan su esencia.
-              <br />
-              Diseñamos soluciones de gestión del talento a medida, combinando experiencia en RRHH, metodologías ágiles y un enfoque cercano que asegura impacto real en tus equipos.
-              <br />
-              Creemos en la conexión entre el potencial único de cada persona y las oportunidades que hacen crecer a los negocios. Sabemos lo desafiante que es el mercado actual, y justamente eso nos motiva a estar a tu lado: para que tu energía se enfoque en hacer crecer tu empresa, mientras nosotros potenciamos a tu equipo.
-            </p>
-            <button className="css-button-gradient--6 button-view-more-hero-section">VER MÁS</button>
+            <div className="quote-text">
+              <span className="quote-target">E</span>quipos que la rompen,<br />
+              marcas que <strong>inspiran</strong>.
+            </div>
+            <span className="quote-mark-right">*</span>
+            <Link to="/conocenos" className="css-button-gradient--6 button-view-more-hero-section">
+              VER MÁS
+            </Link>
           </div>
         </div>
-
         <div className="waves-wrapper">
-          <Waves />
+          <Waves marginTop={100} />
         </div>
       </div>
     </section>
@@ -70,4 +75,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

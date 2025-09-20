@@ -14,11 +14,8 @@ const Footer = () => {
 
           {/* email y redes */}
           <div className="footer-contact">
-            <p className="footer-email">contacto@genhr.com</p>
+            <p className="footer-email">hola@genhr.com</p>
             <div className="footer-socials">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebookF />
-              </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </a>
@@ -33,8 +30,8 @@ const Footer = () => {
         <div className="footer-right">
           <ul className="footer-links">
             <li><a target="blank" href="https://www.privacypolicies.com/live/5a9b87e7-c8e8-41bc-910e-a2e992d6034b">Políticas de Privacidad</a></li>
-            <Link to="/#our-values">Nuestros Valores</Link>
-            <li><a href="/contact">Contacto</a></li>
+            <Link to="/servicios">Servicios</Link>
+            <li><a href="/contacto">Contacto</a></li>
           </ul>
         </div>
       </div>

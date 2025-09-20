@@ -1,27 +1,34 @@
 .values-container {
   position: relative;
-  height: 500px;
+  height: 550px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
   overflow: hidden;
 }
 
 .value-circle {
   position: absolute;
-  font-size: 2rem;
-  width: 80px;
-  height: 80px;
+  font-size: 1.3rem;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   color: white;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.6s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    box-shadow 0.3s ease,
+    background-color 0.4s ease;
   cursor: pointer;
   z-index: 15;
+  text-shadow:
+    1px 1px 2px rgba(0, 0, 0, 0.7),
+    0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 .value-circle:hover {
@@ -38,29 +45,44 @@
   position: absolute;
   font-size: 32px;
   font-weight: bold;
-  color: #000000; /* tu cambio */
+  color: #000000;
   z-index: 0;
   text-align: center;
 }
 
 .value-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
   opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: scale(0.5) translateY(200px);
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 20;
+  z-index: 50;
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: transparent;
 }
 
+/* animacion para el div que se despliega luego de tocar uno de los circulos */
 .value-overlay.active {
-  opacity: 1;
-  transform: scale(1);
+  animation: overlaySmooth 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  background-color: #CDF26A;
+}
+
+@keyframes overlaySmooth {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .overlay-content {
@@ -69,6 +91,7 @@
   max-width: 80%;
   transform: translateY(20px);
   animation: slideIn 0.6s forwards;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .overlay-content h2 {
@@ -92,7 +115,7 @@
   position: relative;
   padding: 60px 20px;
   text-align: center;
-  background-color: #fff;
+  background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
 }
 
 .ourValues-title {
@@ -101,23 +124,99 @@
   font-weight: bold;
   margin-bottom: 40px;
   display: inline-block;
-  color: #000000;
+  color: #fff;
 }
 
 .ourValues-title::after {
   content: "";
   position: absolute;
   display: block;
-  width: 60px; 
+  width: 60px;
   height: 3px;
   background: #cdf26a;
-  bottom: -10px; 
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
 }
 
+.quote-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quote-wrapper p {
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.quote-mark-ourValues {
+  font-size: 80px;
+  color: #CDF26A;
+  margin-top: 24px;
+}
+
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width:500px) {
+  .value-overlay {
+    width: 300px;
+    height: 300px;
+    font-size: 0.9rem;
+  }
+
+  .quote-mark-ourValues {
+    font-size: 40px;
+  }
+}
+
+@media (max-width:200px) {
+  .value-circle {
+    font-size: 0.7rem;
+    width: 92px;
+    height: 84px;
+  }
+
+  .value-overlay {
+    width: 110px;
+    height: 120px;
+    font-size: 0.8rem;
+  }
+
+  .overlay-content h2 {
+    font-size: 0.7rem;
+  }
+
+  .overlay-content p {
+    font-size: 0.6rem;
+  }
+
+  .quote-wrapper p {
+    font-size: 0.8rem;
+  }
+
+  .quote-mark-ourValues {
+    font-size: 63px;
+  }
+
+  .values-container {
+    height: 300px;
+  }
+
+
 }

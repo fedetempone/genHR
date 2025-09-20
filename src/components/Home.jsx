@@ -1,19 +1,9 @@
-import Hero from "./Hero";
-import OurValues from "./OurValues";
-import AboutUs from "./Pages/AboutUs";
-import WhyChooseUs from "./Pages/WhyChooseUs";
-import SubmitCV from "./SubmitCV";
-import { ContactForm } from "./ContactForm";
+import Hero from "./Hero"
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <AboutUs />
-      <WhyChooseUs />
-      <OurValues/>
-      <SubmitCV/>
-      <ContactForm/>
     </>
   );
 };

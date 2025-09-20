@@ -1,9 +1,9 @@
 .waves {
-  position: relative;   /* para que no se superponga con el texto */
+  position: relative;  
   display: block;
   width: 100%;
-  height: 80px;        /* podés ajustar la altura */
-  margin-bottom: 50px;  /* elimina línea blanca de aliasing */
+  height: 80px;        
+  margin-bottom: 50px;
 }
 
 .parallax > use {

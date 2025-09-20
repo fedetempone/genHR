@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Waves from "../Waves";
 import "../../styles/pages/blog.css";
 
 const Blog = () => {
@@ -105,6 +106,7 @@ const Blog = () => {
           </p>
         </div>
       </section>
+      <Waves marginTop={-80} marginBottom={-55} />
 
       {/* contenido descriptivo del blog */}
       <section className="blog-content">

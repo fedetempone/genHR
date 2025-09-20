@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Lightning   } from "@phosphor-icons/react";
 import "../styles/nav.css";
 
 const Nav = () => {
@@ -39,22 +40,27 @@ const Nav = () => {
         <ul className="nav-links">
           <li>
             <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>
-              INICIO
+              <Lightning   size={24} weight="bold" color="#CDF26A"  />
             </NavLink>
           </li>
           <li>
-            <NavLink to="/submit-cv" className={({ isActive }) => isActive ? "active-link" : ""}>
-              DEJANOS TU CV
+            <NavLink to="/conocenos" className={({ isActive }) => isActive ? "active-link" : ""}>
+              CONOCENOS
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/servicios" className={({ isActive }) => isActive ? "active-link" : ""}>
+              SERVICIOS
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contacto" className={({ isActive }) => isActive ? "active-link" : ""}>
+              CONTACTO
             </NavLink>
           </li>
           <li>
             <NavLink to="/blog" className={({ isActive }) => isActive ? "active-link" : ""}>
               BLOG
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""}>
-              CONTACTO
             </NavLink>
           </li>
         </ul>
@@ -72,12 +78,12 @@ const Nav = () => {
         <ul className="nav-links">
           <li>
             <NavLink to="/" onClick={handleNavLinkClick} className={({ isActive }) => isActive ? "active-link" : ""}>
-              INICIO
+              <Lightning   size={24} weight="bold" color="#CDF26A" />
             </NavLink>
           </li>
           <li>
-            <NavLink to="/submit-cv" onClick={handleNavLinkClick} className={({ isActive }) => isActive ? "active-link" : ""}>
-              DEJANOS TU CV
+            <NavLink to="/servicios" onClick={handleNavLinkClick} className={({ isActive }) => isActive ? "active-link" : ""}>
+              SERVICIOS
             </NavLink>
           </li>
           <li>
@@ -86,7 +92,7 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" onClick={handleNavLinkClick} className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/contacto" onClick={handleNavLinkClick} className={({ isActive }) => isActive ? "active-link" : ""}>
               CONTACTO
             </NavLink>
           </li>

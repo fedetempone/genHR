@@ -152,10 +152,30 @@
   height: 100px;
 }
 
+/* para centrar los iconos de phosporicons */
+
+.nav-links li a svg,
+.mobile-menu ul li a svg {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
 /* mobile:responsive */
 @media (max-width: 999px) {
   .nav-links {
-    display: none; /* oculto los links en mobile */
+    display: none;
+    /* oculto los links en mobile */
   }
 
   .hamburger {
@@ -163,8 +183,12 @@
   }
 }
 
-@media (max-width: 400px) {
-  .navbar {
-    min-width: 325px;
+@media (max-width: 200px) {
+  .navbar-content {
+    padding: 50px 0px 0 0px;
+  }
+
+  .hamburger {
+    margin-right: 10px;
   }
 }

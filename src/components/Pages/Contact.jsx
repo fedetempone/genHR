@@ -1,4 +1,5 @@
 import "../../styles/pages/contactForm.css";
+import Waves from "../Waves";
 
 export const Contact = () => {
     //   const { formData, handleChange, handleSubmit } = useContactForm(() => {
@@ -16,7 +17,7 @@ export const Contact = () => {
                         Completá el formulario y conversemos sobre cómo desde gen HR podemos acompañarte.</p>
                 </div>
             </section>
-
+            <Waves marginTop={-80} marginBottom={-55} />
             <section className="contact-section full-page">
                 <div className="contact-container full-page">
                     {/* titulo y subtitulo */}

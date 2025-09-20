@@ -2,24 +2,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import { Contact } from "./components/Pages/Contact";
-import SubmitCVFullPage from "./components/Pages/SubmitCVFullPage";
 import Blog from "./components/Pages/Blog";
 import BlogDetails from "./components/Pages/BlogDetails";
 import ScrollToTop from "./components/ScrollToTop";
-import ScrollToHash from "./components/ScrollToHash"; 
+import MeetUs from "./components/Pages/MeetUs";
+import ServiceDetails from "./components/Pages/ServiceDetails";
+import Services from "./components/Pages/Services";
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <ScrollToHash />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contacto" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetails />} />
-          <Route path="/submit-cv" element={<SubmitCVFullPage />} />
+          <Route path="/conocenos" element={<MeetUs />} />
+          <Route path="/servicios/:id" element={<ServiceDetails />} />
+          <Route path="/servicios" element={<Services />} />
         </Routes>
       </Layout>
     </Router>

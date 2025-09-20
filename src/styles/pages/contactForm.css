@@ -215,4 +215,22 @@
   .contact-hero-title {
     font-size: 2rem;
   }
+
+  .contact-hero-title::after {
+    top: 10px;
+  }
+}
+
+@media (max-width:200px) {
+  .contact-section.full-page {
+    padding: 0;
+  }
+
+  .contact-title.full-page {
+    font-size: 1.6rem;
+  }
+
+  .contact-btn {
+    padding: 0.2rem 1rem;
+  }
 }
