@@ -1,3 +1,6 @@
+/* ===========================
+   HERO SECTION
+=========================== */
 .services-hero-section {
   background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
   height: 750px;
@@ -26,36 +29,32 @@
 .services-hero-title::after {
   content: "";
   position: absolute;
-  display: block;
   width: 20%;
   height: 3px;
   background: #cdf26a;
   top: 56px;
   left: 0;
   right: 0;
-  margin: 50px auto auto auto;
+  margin: 50px auto 0 auto;
 }
 
-/* SERVICE DETAILS */
-
+/* ===========================
+   SERVICE DETAILS
+=========================== */
 .service-details {
   background: #fff;
-  list-style-type: disc;
-  padding-left: 20px;
-  background-color: #fff;
   padding: 50px 20px;
   text-align: center;
 }
 
-.service-details li {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: #000;
+.service-details h2 {
+  text-decoration: underline;
+  margin: 40px;
 }
 
 .service-details ul {
-  list-style-type: disc;
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
@@ -64,21 +63,33 @@
   line-height: 1.6;
 }
 
-.service-details h2 {
-  text-decoration: underline;
-  margin: 40px;
+.service-details li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #000;
 }
 
+
+.details-list li svg {
+  margin: 0px 5px;
+}
+
+/* ===========================
+   SERVICE CARDS
+=========================== */
 .service-card {
-  background: #FAF1E5;
+  background: #faf1e5;
   padding: 30px;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
-   opacity: 0;
+  opacity: 0;
   transform: translateY(50px);
   transition: all 0.6s ease-out;
+  width: 100%;
+  margin: 0px auto;
 }
 
 .service-card.show {
@@ -86,7 +97,6 @@
   transform: translateY(0);
 }
 
-/* efecto que las cards aparezcan desde el lateral */
 .service-card:nth-child(even) {
   transform: translateX(50px);
 }
@@ -118,12 +128,17 @@
   height: 40px;
 }
 
-
-/* MODALIDAD DE TRABAJO */
+/* ===========================
+   MODALIDAD DE TRABAJO
+=========================== */
 .services-modalidad-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
   padding: 50px 20px;
   text-align: center;
+  height: 600px;
 }
 
 .services-modalidad-section h2 {
@@ -143,22 +158,33 @@
   margin: 15px auto 0 auto;
 }
 
+/* lista con iconos */
 .modalidad-list {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style: none;
+  padding: 0;
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
 }
 
 .modalidad-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   margin-bottom: 15px;
   font-size: 1.1rem;
-  color: #000;
+  color: #fff;
+}
+
+.modalidad-list li svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
 }
 
 .modalidad-list strong {
-  color: #000;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -167,8 +193,14 @@
   color: #fff;
 }
 
-/* POR QUE ELEGIRNOS */
+/* ===========================
+   POR QUE ELEGIRNOS
+=========================== */
 .services-por-que-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
   background-color: #fff;
   padding: 50px 20px;
   text-align: center;
@@ -191,9 +223,10 @@
   margin: 15px auto 0 auto;
 }
 
+/* Lista con iconos */
 .por-que-list {
-  list-style-type: disc;
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
@@ -203,13 +236,27 @@
 }
 
 .por-que-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
-@media (max-width:999px) {
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 999px) {
   .services-grid {
     max-width: 700px;
-    margin: 0px 100px;
+    margin: 0 100px;
   }
 
   .services-hero-title {
@@ -217,18 +264,45 @@
   }
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .services-grid {
-    max-width: 300px;
-    margin: 0px auto;
+    margin: 0 auto;
+    width: 95%;
   }
 
   .services-hero-title {
     font-size: 1.6rem;
   }
+
+  .service-card {
+    will-change: transform, opacity;
+    contain: layout;
+    word-break: break-all;
+  }
+
+  .service-card:nth-child(even) {
+    transform: translateY(50px);
+  }
+
+  .services-modalidad-section {
+    height: auto;
+  }
+
+  .service-card p {
+    font-size: 0.8rem;
+  }
+
+  .btn-meetus-services {
+    font-size: 0.8rem;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+  }
+
 }
 
-@media (max-width:200px) {
+@media (max-width: 200px) {
   .services-modalidad-section {
     padding: 5px 7px;
   }

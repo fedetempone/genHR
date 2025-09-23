@@ -1,4 +1,4 @@
-/* hero del BlogDetails (reutilizo algunas clases de Blog.jsx para que quede mejor) */
+/* hero del BlogDetails (reutilizo algunas clases de Blog.jsx para que quede reutilizable y no repetir estilos) */
 .blog-hero {
     background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
     min-height: 750px;
@@ -32,9 +32,14 @@
 }
 
 .blog-hero-description-container {
-    margin-top: 100px;
-    color: #fff;
+    padding: 100px;
+    color: #000000;
     font-size: 1.2rem;
+    text-align: center;
+}
+
+.blogdetails-hero-container h1 {
+    font-size: 2rem;
 }
 
 /* contenido detallado del post */
@@ -54,8 +59,47 @@
     padding: 20px;
 }
 
+.blog-details-text ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.blog-details-text ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.blog-details-text a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.icon-number {
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-details-text span {
+    display: flex;
+    align-items: center;
+}
+
+.blog-details-text h4 {
+    margin-top: 20px;
+}
+
+
 /* responsive */
-@media (max-width: 768px) {
+@media (max-width: 999px) {
     .blog-details-content {
         padding: 0 1rem;
     }
@@ -66,10 +110,52 @@
 
     .blog-hero-description-container {
         font-size: 1rem;
-        margin-top: 60px;
+        padding: 60px;
     }
 
     .blog-hero-title::after {
-        top: 20px;
+        top: 80px;
+    }
+
+    .blogdetails-hero-container h1 {
+        font-size: 1.4rem;
+    }
+
+        .blog-details-text h4{
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .blogdetails-hero-container h1 {
+        font-size: 1rem;
+    }
+
+    .blog-hero-description-container {
+        padding: 10px;
+        font-size: 0.8rem;
+        word-break: break-all;
+    }
+
+    .blog-details-text {
+        width: auto;
+        padding: 0;
+        margin: 0;
+        word-break: break-all;
+    }
+
+    .blog-details-text li{
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 200px) {
+    .blogdetails-hero-container h1 {
+        font-size: 0.8rem;
+    }
+
+    .blog-hero-title::after {
+        top: 70px;
     }
 }

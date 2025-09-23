@@ -37,3 +37,27 @@
   margin: 50px auto auto auto;
 }
 
+@media (max-width: 200px) {
+  .service-details h2 {
+    margin: 0 !important;
+  }
+
+  .service-details-hero-title {
+    font-size: 1.2rem !important;
+  }
+}
+
+
+@media (max-width: 999px) {
+  .service-details-hero-title {
+    font-size: 2rem;
+  }
+}
+
+
+
+@media (max-width: 500px) {
+  .service-details-hero-title {
+    font-size: 1.4rem;
+  }
+}

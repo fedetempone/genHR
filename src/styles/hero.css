@@ -290,7 +290,7 @@
   }
 
   .quote-text {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .quote-mark-left {
@@ -313,13 +313,13 @@
 
   .quote-mark-right {
     font-size: 4rem;
-    top: 52px;
+    top: 180px;
     right: 33px;
   }
 
   .hero-logo {
-    width: 126px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
     margin: 0px auto;
   }
 
@@ -328,20 +328,9 @@
   }
 }
 
-@media (max-width: 400px) {
-  .css-button-gradient--6 {
-    min-width: 79px;
-    height: 24px;
-    font-size: 10px;
+@media (max-width: 310px) {
+  .quote-container {
+    display: none;
   }
-
-  .quote-text {
-    font-size: 1rem;
-  }
-
-  .quote-mark-left {
-    font-size: 4rem;
-  }
-
 }
-
+    

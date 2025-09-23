@@ -82,6 +82,11 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/conocenos" onClick={handleNavLinkClick} className={({ isActive }) => isActive ? "active-link" : ""}>
+              CONOCENOS
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/servicios" onClick={handleNavLinkClick} className={({ isActive }) => isActive ? "active-link" : ""}>
               SERVICIOS
             </NavLink>

@@ -109,8 +109,8 @@
   .about-us-image-mobile {
     display: block;
     /* visible en mobile */
-    width: 500px;
-    height: 465px;
+    width: 80%;
+    height: 100%;
     border-radius: 100%;
     margin: 0 auto 20px auto;
   }
@@ -125,6 +125,8 @@
 @media (max-width: 500px) {
   .about-us-image-wrapper {
     min-width: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .about-us-content {
@@ -141,8 +143,8 @@
 
   .about-us-image-mobile {
     margin: 0;
-    width: 200px;
-    height: 185px;
+    width: 80%;
+    height: 100%;
   }
 
   .about-us-title {
@@ -178,8 +180,7 @@
   }
 
   .about-us-image-mobile {
-    width: 142px;
-    height: 139px;
+    display: none;
   }
 
   .about-us-container {

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { CheckCircle } from "@phosphor-icons/react";
 import servicesData from "../../data/serviceData";
 import {
   Target,
@@ -80,27 +81,30 @@ const Services = () => {
           ))}
         </div>
       </section>
-
       {/* MODALIDAD DE TRABAJO */}
       <section className="services-modalidad-section">
         <h2>Modalidad de trabajo</h2>
         <ul className="modalidad-list">
           <li>
-            <strong>Acompañamiento flexible:</strong>
-            <span className="modalidad-text">
-              sesiones específicas de asesoramiento y diseño de temas concretos.
+            <CheckCircle size={24} weight="fill" color="#CDF26A " />
+            <span>
+              <strong>Acompañamiento flexible:</strong> sesiones específicas de
+              asesoramiento y diseño de temas concretos.
             </span>
           </li>
           <li>
-            <strong>Proyectos end to end:</strong>
-            <span className="modalidad-text">
-              soluciones concretas con objetivos y plazos definidos.
+            <CheckCircle size={24} weight="fill" color="#CDF26A " />
+            <span>
+              <strong>Proyectos end to end:</strong> soluciones concretas con
+              objetivos y plazos definidos.
             </span>
           </li>
           <li>
-            <strong>Bonus mensual:</strong>
-            <span className="modalidad-text">
-              acompañamiento continuo. Nos integramos a tu equipo como un partner estratégico de RRHH, sin sumar estructura interna.
+            <CheckCircle size={24} weight="fill" color="#CDF26A " />
+            <span>
+              <strong>Bonus mensual:</strong> acompañamiento continuo. Nos integramos
+              a tu equipo como un partner estratégico de RRHH, sin sumar estructura
+              interna.
             </span>
           </li>
         </ul>
@@ -110,10 +114,22 @@ const Services = () => {
       <section className="services-por-que-section">
         <h2>¿Por qué Elegirnos?</h2>
         <ul className="por-que-list">
-          <li>Entendemos a pymes y startups.</li>
-          <li>Combinamos estrategia + acción.</li>
-          <li>Soluciones simples y aplicables.</li>
-          <li>Nos integramos como parte del equipo.</li>
+          <li>
+            <CheckCircle size={24} weight="fill" color="#CDF26A " />
+            <span>Entendemos a pymes y startups.</span>
+          </li>
+          <li>
+            <CheckCircle size={24} weight="fill" color="#CDF26A " />
+            <span>Combinamos estrategia + acción.</span>
+          </li>
+          <li>
+            <CheckCircle size={24} weight="fill" color="#CDF26A " />
+            <span>Soluciones simples y aplicables.</span>
+          </li>
+          <li>
+            <CheckCircle size={24} weight="fill" color="#CDF26A " />
+            <span>Nos integramos como parte del equipo.</span>
+          </li>
         </ul>
       </section>
     </>
