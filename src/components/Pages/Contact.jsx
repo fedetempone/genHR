@@ -79,10 +79,10 @@ export const Contact = () => {
                         {/* boton y texto fiinal */}
                         <div className="form-footer left">
                             <button type="submit" className="contact-btn">
-                                ¿Charlamos?
+                                Enviar
                             </button>
                             <p className="contact-extra">
-                                También podés escribirnos a hola@genhr.com o por Instagram.
+                                También podés escribirnos a <a href="mailto:hola@genhr.com.ar">hola@genhr.com.ar</a> o por <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>.
                             </p>
                         </div>
                     </form>

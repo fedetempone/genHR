@@ -1,5 +1,5 @@
 import "../styles/footer.css"
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -14,7 +14,7 @@ const Footer = () => {
 
           {/* email y redes */}
           <div className="footer-contact">
-            <p className="footer-email">hola@genhr.com</p>
+            <p className="footer-email">hola@genhr.com.ar</p>
             <div className="footer-socials">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />

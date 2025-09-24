@@ -1,121 +1,11 @@
-.values-container {
-  position: relative;
-  height: 550px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  overflow: hidden;
-}
-
-.value-circle {
-  position: absolute;
-  font-size: 1.3rem;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition:
-    transform 0.4s ease,
-    opacity 0.4s ease,
-    box-shadow 0.3s ease,
-    background-color 0.4s ease;
-  cursor: pointer;
-  z-index: 15;
-  text-shadow:
-    1px 1px 2px rgba(0, 0, 0, 0.7),
-    0 0 4px rgba(0, 0, 0, 0.5);
-}
-
-.value-circle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.value-circle.hidden {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.center-logo {
-  position: absolute;
-  font-size: 32px;
-  font-weight: bold;
-  color: #000000;
-  z-index: 0;
-  text-align: center;
-}
-
-.value-overlay {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  opacity: 0;
-  transform: scale(0.5) translateY(200px);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 50;
-  color: white;
-  font-size: 1.4rem;
-  text-align: center;
-  background-color: transparent;
-}
-
-/* animacion para el div que se despliega luego de tocar uno de los circulos */
-.value-overlay.active {
-  animation: overlaySmooth 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-  background-color: #CDF26A;
-}
-
-@keyframes overlaySmooth {
-  0% {
-    opacity: 0;
-    transform: scale(0.5) translateY(200px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.overlay-content {
-  text-align: center;
-  color: white;
-  max-width: 80%;
-  transform: translateY(20px);
-  animation: slideIn 0.6s forwards;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.overlay-content h2 {
-  font-size: 2.5em;
-  margin-bottom: 1em;
-}
-
-.overlay-content p {
-  font-size: 1.2em;
-  margin-bottom: 1em;
-}
-
-.overlay-content img {
-  width: 150px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
 .ourValues-container {
   position: relative;
   padding: 60px 20px;
   text-align: center;
   background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
+  overflow: hidden;
+  perspective: 1px;
+  height: 1000px;
 }
 
 .ourValues-title {
@@ -139,84 +29,173 @@
   transform: translateX(-50%);
 }
 
-.quote-wrapper {
+.values-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+/* efecto parallax */
+.parallax-inner {
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* responsive */
+@media (max-width: 999px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* card base */
+
+.value-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 250px;
+  background: rgba(0, 0, 0, 0.09);
+  border-radius: 12px;
+  padding: 22px;
+  color: #fff;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card:hover {
+  transform: translateY(-12px) scale(1.05) rotateZ(-1deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* icono con efecto hover */
+.value-card:hover .icon-wrapper {
+  animation: hoverPulse 0.6s ease-in-out 1;
+}
+
+/* titulo con efecto hovero */
+.value-card:hover h3 {
+  transform: translateY(-13px) rotateX(13deg);
+  transition: transform 0.3s ease;
+}
+
+/* parrafo con efecto hover */
+.value-card:hover p {
+  transform: translateY(-4px);
+  opacity: 0.95;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* icono y titulos */
+.icon-title {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
-.quote-wrapper p {
+.icon-title h3 {
   margin: 0;
-  line-height: 1.2;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #fff;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
-.quote-mark-ourValues {
-  font-size: 80px;
-  color: #CDF26A;
-  margin-top: 24px;
+/* .icon-wrapper {
+  animation: pulse 2.5s infinite ease-in-out;
+} */
+
+@keyframes hoverPulse {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.3) rotateZ(-5deg);
+  }
+  60% {
+    transform: scale(1.15) rotateZ(3deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(0deg);
+  }
 }
 
+/* efecto pulse de iconos */
+.icon-wrapper {
+  animation: pulse 2.5s infinite ease-in-out;
+}
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+/* descripcion de cards */
+.value-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ddd;
+  text-align: left;
+}
+
+/* CTA card */
+.cta-card {
+  background: #cdf26a;
+  color: #000;
+  text-align: center;
+}
+
+.cta-card h3 {
+  color: #000;
+  font-weight: bold;
+}
+
+.cta-card p {
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+} 
+
+@media (max-width:999px) {
+  .ourValues-container {
+    height: 1300px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .icon-title {
+    flex-direction: column;
   }
 }
 
 @media (max-width:500px) {
-  .value-overlay {
-    width: 300px;
-    height: 300px;
-    font-size: 0.9rem;
+  .ourValues-container {
+    height: 2400px;
   }
-
-  .quote-mark-ourValues {
-    font-size: 40px;
-  }
-}
-
-@media (max-width:200px) {
-  .value-circle {
-    font-size: 0.7rem;
-    width: 92px;
-    height: 84px;
-  }
-
-  .value-overlay {
-    width: 110px;
-    height: 120px;
-    font-size: 0.8rem;
-  }
-
-  .overlay-content h2 {
-    font-size: 0.7rem;
-  }
-
-  .overlay-content p {
-    font-size: 0.6rem;
-  }
-
-  .quote-wrapper p {
-    font-size: 0.8rem;
-  }
-
-  .quote-mark-ourValues {
-    font-size: 63px;
-  }
-
-  .values-container {
-    height: 300px;
-  }
-
-
 }

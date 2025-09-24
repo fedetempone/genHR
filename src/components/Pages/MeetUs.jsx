@@ -122,9 +122,7 @@ const MeetUs = () => {
       </section>
 
       {/* OUR VALUES */}
-      <section className="meetus-values-section">
         <OurValues />
-      </section>
     </>
   );
 };
