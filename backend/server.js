@@ -56,11 +56,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // el front end se sirve  desde dist
-app.use(express.static(path.join(__dirname, "../dist")));
+app.use(express.static(path.join(process.cwd(), "dist")));
 
 // cualquier otra ruta que no es /api se redirecciona a index.html para que no me tire 404 al acceder directo a una ruta
 app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../dist/index.html"));
+  res.sendFile(path.join(process.cwd(), "dist/index.html"));
 });
 
 // ------------------ aca levanto el servidor ------------------
