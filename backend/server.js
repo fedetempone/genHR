@@ -1,5 +1,5 @@
 import express from "express";
-import nodemailer from "nodemailer";
+import fetch from "node-fetch"; // npm install node-fetch
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -8,19 +8,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: "https://genhr.onrender.com", 
+  origin: "https://genhr.onrender.com",
 }));
 app.use(express.json());
-
-// nodemailes con MailerSend SMTP
-const transporter = nodemailer.createTransport({
-  host: "smtp.mailersend.net",
-  port: 587,
-  auth: {
-    user: process.env.MAILERSEND_API_KEY,
-    pass: process.env.MAILERSEND_API_KEY,
-  },
-});
 
 // API de contacto
 app.post("/api/contact", async (req, res) => {
@@ -28,13 +18,29 @@ app.post("/api/contact", async (req, res) => {
   if (!name || !email || !message) return res.status(400).json({ msg: "Campos requeridos incompletos" });
 
   try {
-    await transporter.sendMail({
-      from: process.env.MAILERSEND_FROM,
-      replyTo: email,
-      to: process.env.MAILERSEND_FROM,
-      subject: `Nuevo contacto desde la web: ${name}`,
-      text: `Nombre: ${name}\nEmail: ${email}\nEmpresa: ${company}\nTeléfono: ${phone}\nMensaje: ${message}`,
+    const response = await fetch("https://api.mailersend.com/v1/email", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.MAILERSEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: {
+          email: process.env.MAILERSEND_FROM,
+        },
+        to: [
+          { email: process.env.MAILERSEND_FROM }
+        ],
+        subject: `Nuevo contacto desde la web: ${name}`,
+        text: `Nombre: ${name}\nEmail: ${email}\nEmpresa: ${company}\nTeléfono: ${phone}\nMensaje: ${message}`
+      }),
     });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("MailerSend API error:", errorText);
+      return res.status(500).json({ msg: "Error al enviar el mensaje" });
+    }
 
     res.status(200).json({ msg: "Mensaje enviado" });
   } catch (error) {
