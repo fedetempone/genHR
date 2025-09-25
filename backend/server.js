@@ -1,5 +1,5 @@
 import express from "express";
-import fetch from "node-fetch"; // npm install node-fetch
+import fetch from "node-fetch"; 
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -8,8 +8,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: "https://genhr.onrender.com", // tu frontend
+  origin: "https://genhr.onrender.com",
 }));
+app.options("*", cors());
 app.use(express.json());
 
 // API de contacto
