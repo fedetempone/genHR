@@ -297,14 +297,10 @@
     font-size: 60px;
   }
 
-  .quote-mark-right {
-    font-size: 4rem;
-  }
-
   .quote-target::before {
-    font-size: 4rem;
-    left: -17px;
-    top: -26px;
+    font-size: 7rem;
+    left: -23px;
+    top: -40px;
   }
 
   .quote-container {
@@ -312,9 +308,9 @@
   }
 
   .quote-mark-right {
-    font-size: 4rem;
+    font-size: 7rem;
     top: 180px;
-    right: 33px;
+    right: 16px;
   }
 
   .hero-logo {
@@ -333,4 +329,13 @@
     display: none;
   }
 }
-    
+
+@media (min-width: 400px) and (max-width: 494px) {
+  .quote-mark-right {
+    right: 37px;
+  }
+
+  .quote-container {
+    text-align: center;
+  }
+}
