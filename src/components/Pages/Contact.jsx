@@ -99,8 +99,7 @@ import Swal from "sweetalert2";
 import confetti from "canvas-confetti";
 import LoadingButton from "../LoadingButton";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-
+const API_URL = import.meta.env.VITE_API_URL || "https://genhr-backend.onrender.com";
 
 export const Contact = () => {
   const [loading, setLoading] = useState(false);
