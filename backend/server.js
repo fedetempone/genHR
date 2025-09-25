@@ -31,7 +31,7 @@ app.post("/api/contact", async (req, res) => {
 
     res.status(200).json({ msg: "Mensaje enviado" });
   } catch (error) {
-    console.error(error);
+     console.error("ERROR EN CONTACT API:", error);
     res.status(500).json({ msg: "Error al enviar el mensaje" });
   }
 });
