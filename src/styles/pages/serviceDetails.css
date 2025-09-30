@@ -37,6 +37,44 @@
   margin: 50px auto auto auto;
 }
 
+/* ===========================
+   SERVICE DETAILS
+=========================== */
+.service-details {
+  background: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.service-details h2 {
+  text-decoration: underline;
+  margin: 40px;
+}
+
+.service-details ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #000;
+  line-height: 1.6;
+}
+
+.service-details li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+
+.details-list li svg {
+  margin: 0px 5px;
+}
+
 @media (max-width: 200px) {
   .service-details h2 {
     margin: 0 !important;

@@ -1,5 +1,5 @@
 /* ===========================
-   HERO SECTION
+    HERO
 =========================== */
 .services-hero-section {
   background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
@@ -11,11 +11,6 @@
   text-align: center;
   padding: 4rem 2rem;
   position: relative;
-}
-
-.services-fullpage-hero-title {
-  color: #fff;
-  font-size: 1.2rem;
 }
 
 .services-hero-title {
@@ -39,253 +34,192 @@
 }
 
 /* ===========================
-   SERVICE DETAILS
+    OUR SERVICES 
 =========================== */
-.service-details {
-  background: #fff;
-  padding: 50px 20px;
+.our-services {
+  position: relative;
+  background-color: #fff;
+  padding: 100px 20px;
   text-align: center;
+  overflow: hidden;
+  perspective: 1px;
 }
 
-.service-details h2 {
-  text-decoration: underline;
-  margin: 40px;
+.values-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
 }
 
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  max-width: 800px;
+.parallax-inner {
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}
+
+/* GRID LAYOUT:*/
+/* primera fila */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1400px;
   margin: 0 auto;
-  text-align: left;
-  font-size: 1.1rem;
-  color: #000;
-  line-height: 1.6;
+  align-items: stretch;
 }
 
-.service-details li {
+/* contenedor de la segunda fila */
+.services-row-two {
+  grid-column: 1 / -1;
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: #000;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px auto;
+  max-width: 1300px;
+}
+
+/* estilo para las tarjetas en la segunda fila */
+.services-row-two .service-card {
+  width: calc(100% / 4);
 }
 
 
-.details-list li svg {
-  margin: 0px 5px;
-}
 
 /* ===========================
-   SERVICE CARDS
+    ESTILOS CARDS
 =========================== */
-.service-card {
+.service-card.value-card {
   background: #faf1e5;
-  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  color: #000;
   border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease-out;
-  width: 100%;
-  margin: 0px auto;
-}
-
-.service-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.service-card:nth-child(even) {
-  transform: translateX(50px);
-}
-
-.service-card.show:nth-child(even) {
-  transform: translateX(0);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-12px) scale(1.05) rotateZ(-1deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
-.service-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #8c63c8;
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.icon-title h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #000;
+}
+
+.icon-wrapper {
+  animation: pulse 2.5s infinite ease-in-out;
+}
+
+.btn-meetus-services {
+  margin-top: 20px;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+/* hover  */
+.service-card:hover .icon-wrapper {
+  animation: hoverPulse 0.6s ease-in-out 1;
+}
+
+@keyframes hoverPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.3) rotateZ(-5deg);
+  }
+
+  60% {
+    transform: scale(1.15) rotateZ(3deg);
+  }
+
+  100% {
+    transform: scale(1) rotateZ(0deg);
+  }
+}
+
+.service-card:hover h3 {
+  transform: translateY(-13px) rotateX(13deg);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover p {
+  transform: translateY(-4px);
+  opacity: 0.95;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .service-card p {
   font-size: 1rem;
-  color: #555;
   line-height: 1.5;
-}
-
-.btn-meetus-services {
-  font-size: 1rem;
-  margin-top: 40px;
-  height: 40px;
-}
-
-/* ===========================
-   MODALIDAD DE TRABAJO
-=========================== */
-.services-modalidad-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
-  padding: 50px 20px;
-  text-align: center;
-  height: 600px;
-}
-
-.services-modalidad-section h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.services-modalidad-section h2::after {
-  content: "";
-  display: block;
-  width: 10%;
-  height: 3px;
-  background-color: #cdf26a;
-  margin: 15px auto 0 auto;
-}
-
-/* lista con iconos */
-.modalidad-list {
-  list-style: none;
-  padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.modalidad-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: #fff;
-}
-
-.modalidad-list li svg {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  margin-top: 4px;
-}
-
-.modalidad-list strong {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.modalidad-list .modalidad-text {
-  font-size: 1rem;
-  color: #fff;
-}
-
-/* ===========================
-   POR QUE ELEGIRNOS
-=========================== */
-.services-por-que-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 600px;
-  background-color: #fff;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.services-por-que-section h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #171d35;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.services-por-que-section h2::after {
-  content: "";
-  display: block;
-  width: 10%;
-  height: 3px;
-  background-color: #cdf26a;
-  margin: 15px auto 0 auto;
-}
-
-/* Lista con iconos */
-.por-que-list {
-  list-style: none;
-  padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-  font-size: 1.1rem;
   color: #000;
-  line-height: 1.6;
-}
-
-.por-que-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 0 10px;
+  text-align: left;
 }
 
 /* ===========================
-   RESPONSIVE
+    RESPONSIVE
 =========================== */
 @media (max-width: 999px) {
-  .services-grid {
-    max-width: 700px;
-    margin: 0 100px;
-  }
-
   .services-hero-title {
     font-size: 2rem;
+  }
+
+  .services-grid {
+    gap: 25px;
+  }
+
+  .services-row-two {
+    gap: 25px;
+  }
+
+  .services-row-two .service-card {
+    width: calc(100% / 4);
+  }
+
+  .service-card {
+    padding: 18px;
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 500px) {
-  .services-grid {
-    margin: 0 auto;
-    width: 95%;
-  }
-
   .services-hero-title {
     font-size: 1.6rem;
-  }
-
-  .service-card {
-    will-change: transform, opacity;
-    contain: layout;
-    word-break: break-all;
-  }
-
-  .service-card:nth-child(even) {
-    transform: translateY(50px);
-  }
-
-  .services-modalidad-section {
-    height: auto;
   }
 
   .service-card p {
@@ -300,34 +234,71 @@
     font-size: 1rem;
   }
 
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .services-row-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+  }
+
+  .services-row-two .service-card {
+    width: auto;
+  }
+
+  .services-row-two .service-card:last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 25px auto 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .our-services {
+    height: 2600px;
+  }
+
+  .btn-meetus-services {
+    min-width: 110px;
+    height: 30px;
+  }
+
+  .services-grid,
+  .services-row-two {
+    grid-template-columns: 1fr;
+  }
+
+  .services-row-two {
+    margin-top: 25px;
+  }
+
+  .services-row-two .service-card:last-child {
+    grid-column: auto;
+    width: auto;
+    margin: 0;
+  }
 }
 
 @media (max-width: 200px) {
-  .services-modalidad-section {
-    padding: 5px 7px;
+  .our-services {
+    height: 2800px;
+    padding: 10px;
   }
 
-  .services-modalidad-section h2 {
-    font-size: 1.2rem;
+  .btn-meetus-services {
+    min-width: 85px;
+    height: 26px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 788px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .modalidad-list .modalidad-text {
-    font-size: 0.8rem;
-  }
-
-  .modalidad-list li {
-    font-size: 0.8rem;
-  }
-
-  .services-por-que-section {
-    padding: 10px 20px;
-  }
-
-  .services-por-que-section h2 {
-    font-size: 1.2rem;
-  }
-
-  .por-que-list {
-    font-size: 0.8rem;
-  }
+  
 }

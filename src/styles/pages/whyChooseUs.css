@@ -1,0 +1,63 @@
+/* ===========================
+   POR QUÉ ELEGIRNOS
+=========================== */
+.services-por-que-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.services-por-que-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #171d35;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.services-por-que-section h2::after {
+  content: "";
+  display: block;
+  width: 10%;
+  height: 3px;
+  background-color: #cdf26a;
+  margin: 15px auto 0 auto;
+}
+
+/* Lista con iconos */
+.por-que-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #000;
+  line-height: 1.6;
+}
+
+.por-que-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.por-que-list li svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+}
+
+
+@media (max-width: 200px) {
+  .por-que-list {
+    font-size: 0.8rem;
+  }
+}

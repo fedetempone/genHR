@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle } from "@phosphor-icons/react";
-import servicesData from "../../data/serviceData";
+import WorkModality from "./WorkModality";
+import WhyChooseUs from "./WhyChooseUs";
+import "../../styles/pages/services.css";
 import {
   Target,
   UserCheck,
@@ -11,8 +13,6 @@ import {
   UsersThree,
   SignOut,
 } from "@phosphor-icons/react";
-import Waves from "../Waves";
-import "../../styles/pages/services.css";
 
 const icons = {
   "atraccion-y-marca-empleadora": <Target size={40} weight="fill" color="#CDF26A" />,
@@ -24,34 +24,24 @@ const icons = {
   "offboarding-humanizado": <SignOut size={40} weight="fill" color="#CDF26A" />,
 };
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Services = () => {
+  const parallaxRef = useRef(null);
+
+  // parallax
   useEffect(() => {
-    const cards = document.querySelectorAll(".service-card");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const delay = entry.target.dataset.index * 100;
-            setTimeout(() => {
-              entry.target.classList.add("show");
-            }, delay);
-          } else {
-            entry.target.classList.remove("show");
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    cards.forEach((card, index) => {
-      card.dataset.index = index;
-      observer.observe(card);
-    });
-
-    return () => {
-      cards.forEach((card) => observer.unobserve(card));
+    const handleScroll = () => {
+      if (parallaxRef.current) {
+        const scrollY = window.scrollY;
+        parallaxRef.current.style.transform = `translateY(${scrollY * 0.05}px)`;
+      }
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -62,76 +52,106 @@ const Services = () => {
           <h1 className="services-hero-title">Nuestros Servicios</h1>
         </div>
       </section>
-      <Waves marginTop={-80} marginBottom={-55} />
 
       {/* SERVICES GRID */}
       <section className="our-services">
-        <div className="services-grid">
-          {servicesData.map((service, index) => (
-            <div className="service-card" key={service.id}>
-              <div className="service-icon">{icons[service.id]}</div>
-              <h3>{service.title}</h3>
-              <p>{service.subtitle}</p>
-              <Link to={`/servicios/${service.id}`}>
-                <button className="css-button-gradient--6 btn-meetus-services">
-                  Ver Más
-                </button>
-              </Link>
+        <div className="values-wrapper">
+          <div className="parallax-inner" ref={parallaxRef}>
+            <div className="services-grid">
+              {/* PRIMERA FILA de 4 tarjetas */}
+              {[
+                "atraccion-y-marca-empleadora",
+                "seleccion-de-talento",
+                "onboarding",
+                "liderazgo",
+              ].map((key, i) => (
+                <motion.div
+                  key={key}
+                  className="service-card value-card"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.3 }}
+                  variants={cardVariants}
+                  transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
+                >
+                  <div className="icon-title">
+                    <span className="icon-wrapper">{icons[key]}</span>
+                    <h3>
+                      {key === "atraccion-y-marca-empleadora"
+                        ? "Atracción y Marca Empleadora"
+                        : key === "seleccion-de-talento"
+                        ? "Selección de Talento"
+                        : key === "onboarding"
+                        ? "Onboarding"
+                        : "Liderazgo"}
+                    </h3>
+                  </div>
+                  <p>
+                    {key === "atraccion-y-marca-empleadora"
+                      ? "Diseñamos estrategias para que tu empresa sea atractiva para el talento correcto."
+                      : key === "seleccion-de-talento"
+                      ? "Procesos de selección ágiles, profesionalizados y con foco en la experiencia humana."
+                      : key === "onboarding"
+                      ? "Diseñamos experiencias de incorporación que facilitan la adaptación y logran buenos resultados."
+                      : "Formamos y acompañamos a líderes para que gestionen con impacto."}
+                  </p>
+                  {/* link + boton */}
+                  <Link to={`/servicios/${key}`}>
+                    <button className="css-button-gradient--6 btn-meetus-services">
+                      Ver Más
+                    </button>
+                  </Link>
+                </motion.div>
+              ))}
+
+              {/* SEGUNDA FILA de 3 tarjetas*/}
+              <div className="services-row-two">
+                {[
+                  "cultura-y-clima-organizacional",
+                  "offboarding-humanizado",
+                  "gestion-y-desarrollo",
+                ].map((key, i) => (
+                  <motion.div
+                    key={key}
+                    className="service-card value-card"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.3 }}
+                    variants={cardVariants}
+                    transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
+                  >
+                    <div className="icon-title">
+                      <span className="icon-wrapper">{icons[key]}</span>
+                      <h3>
+                        {key === "cultura-y-clima-organizacional"
+                          ? "Cultura y Clima Organizacional"
+                          : key === "offboarding-humanizado"
+                          ? "Offboarding Humanizado"
+                          : "Gestión y Desarrollo"}
+                      </h3>
+                    </div>
+                    <p>
+                      {key === "cultura-y-clima-organizacional"
+                        ? "Diagnosticamos y fortalecemos la cultura para que sea vivida en el día a día."
+                        : key === "offboarding-humanizado"
+                        ? "Diseñamos procesos de salida claros y respetuosos."
+                        : "Diseñamos herramientas simples para potenciar y retener talento."}
+                    </p>
+                    {/* link + boton */}
+                    <Link to={`/servicios/${key}`}>
+                      <button className="css-button-gradient--6 btn-meetus-services">
+                        Ver Más
+                      </button>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
-      {/* MODALIDAD DE TRABAJO */}
-      <section className="services-modalidad-section">
-        <h2>Modalidad de trabajo</h2>
-        <ul className="modalidad-list">
-          <li>
-            <CheckCircle size={24} weight="fill" color="#CDF26A " />
-            <span>
-              <strong>Acompañamiento flexible:</strong> sesiones específicas de
-              asesoramiento y diseño de temas concretos.
-            </span>
-          </li>
-          <li>
-            <CheckCircle size={24} weight="fill" color="#CDF26A " />
-            <span>
-              <strong>Proyectos end to end:</strong> soluciones concretas con
-              objetivos y plazos definidos.
-            </span>
-          </li>
-          <li>
-            <CheckCircle size={24} weight="fill" color="#CDF26A " />
-            <span>
-              <strong>Bonus mensual:</strong> acompañamiento continuo. Nos integramos
-              a tu equipo como un partner estratégico de RRHH, sin sumar estructura
-              interna.
-            </span>
-          </li>
-        </ul>
-      </section>
-
-      {/* POR QUÉ ELEGIRNOS */}
-      <section className="services-por-que-section">
-        <h2>¿Por qué Elegirnos?</h2>
-        <ul className="por-que-list">
-          <li>
-            <CheckCircle size={24} weight="fill" color="#CDF26A " />
-            <span>Entendemos a pymes y startups.</span>
-          </li>
-          <li>
-            <CheckCircle size={24} weight="fill" color="#CDF26A " />
-            <span>Combinamos estrategia + acción.</span>
-          </li>
-          <li>
-            <CheckCircle size={24} weight="fill" color="#CDF26A " />
-            <span>Soluciones simples y aplicables.</span>
-          </li>
-          <li>
-            <CheckCircle size={24} weight="fill" color="#CDF26A " />
-            <span>Nos integramos como parte del equipo.</span>
-          </li>
-        </ul>
-      </section>
+      <WorkModality/>
+      <WhyChooseUs/>
     </>
   );
 };

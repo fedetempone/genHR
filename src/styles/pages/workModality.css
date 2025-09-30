@@ -1,0 +1,91 @@
+/* ===========================
+   MODALIDAD DE TRABAJO
+=========================== */
+.services-modalidad-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
+  padding: 50px 20px;
+  text-align: center;
+  height: 600px;
+  overflow: hidden;
+}
+
+.services-modalidad-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.services-modalidad-section h2::after {
+  content: "";
+  display: block;
+  width: 10%;
+  height: 3px;
+  background-color: #cdf26a;
+  margin: 15px auto 0 auto;
+}
+
+/* lista con iconos */
+.modalidad-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.modalidad-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.modalidad-list li svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+}
+
+.modalidad-list strong {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.modalidad-list span {
+  font-size: 1rem;
+  color: #fff;
+}
+
+@media (max-width: 200px) {
+  .services-modalidad-section {
+    padding: 5px 7px;
+  }
+
+  .services-modalidad-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .modalidad-list .modalidad-text {
+    font-size: 0.8rem;
+  }
+
+  .modalidad-list li {
+    font-size: 0.8rem;
+  }
+
+  .services-por-que-section {
+    padding: 10px 20px;
+  }
+
+  .services-por-que-section h2 {
+    font-size: 1.2rem;
+  }
+}
