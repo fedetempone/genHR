@@ -14,12 +14,22 @@ const Footer = () => {
 
           {/* email y redes */}
           <div className="footer-contact">
-            <p className="footer-email">hola@genhr.com.ar</p>
+            <a href="mailto:hola@genhr.com.ar" className="footer-email" data-text="hola@genhr.com.ar">
+              hola@genhr.com.ar
+            </a>
             <div className="footer-socials">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/somosgen.hr/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaInstagram />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/company/somosgen-hr/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedinIn />
               </a>
             </div>

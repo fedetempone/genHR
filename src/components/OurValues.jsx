@@ -52,11 +52,13 @@ const OurValues = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth < 768) return;
       if (parallaxRef.current) {
         const scrollY = window.scrollY;
         parallaxRef.current.style.transform = `translateY(${scrollY * 0.08}px)`;
       }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -64,8 +66,9 @@ const OurValues = () => {
   return (
     <section className="ourValues-container">
       <h2 className="ourValues-title">Nuestros Valores</h2>
+
       <div className="values-wrapper">
-        <div className="parallax-inner" ref={parallaxRef}>
+        <div className="values-placeholder">
           <div className="values-grid">
             {values.map((val, i) => (
               <motion.div
@@ -88,6 +91,7 @@ const OurValues = () => {
                 <p>{val.description}</p>
               </motion.div>
             ))}
+
             <motion.div
               className="value-card cta-card"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -108,6 +112,10 @@ const OurValues = () => {
               </a>
             </motion.div>
           </div>
+        </div>
+
+        <div className="parallax-inner" ref={parallaxRef}>
+          <div className="values-grid" />
         </div>
       </div>
     </section>

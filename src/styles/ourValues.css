@@ -1,4 +1,4 @@
-.ourValues-container {
+/* .ourValues-container {
   position: relative;
   padding: 60px 20px;
   text-align: center;
@@ -6,6 +6,19 @@
   overflow: hidden;
   perspective: 1px;
   height: 1000px;
+} */
+.ourValues-container {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
+  overflow: visible;
+  perspective: 1px;
+}
+
+.values-placeholder {
+  position: relative;
+  z-index: 0;
 }
 
 .ourValues-title {
@@ -34,11 +47,19 @@
   width: 100%;
   overflow: visible;
 }
+
 /* efecto parallax */
 .parallax-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   will-change: transform;
   transition: transform 0.2s ease-out;
+  pointer-events: none;
+  z-index: 1;
 }
+
 
 .values-grid {
   display: grid;
@@ -47,19 +68,6 @@
   max-width: 1200px;
   margin: 0 auto;
   align-items: stretch;
-}
-
-/* responsive */
-@media (max-width: 999px) {
-  .values-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* card base */
@@ -127,12 +135,15 @@
   0% {
     transform: scale(1);
   }
+
   30% {
     transform: scale(1.3) rotateZ(-5deg);
   }
+
   60% {
     transform: scale(1.15) rotateZ(3deg);
   }
+
   100% {
     transform: scale(1) rotateZ(0deg);
   }
@@ -144,9 +155,12 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.25);
   }
@@ -182,20 +196,56 @@
   justify-content: center;
   align-items: center;
   margin: 0px auto;
-} 
+}
+
+
+
+/* responsive */
 
 @media (max-width:999px) {
-  .ourValues-container {
-    height: 1300px;
-  }
-
   .icon-title {
     flex-direction: column;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .parallax-inner {
+    position: static;
+    transform: none !important;
+    pointer-events: auto;
   }
 }
 
 @media (max-width:500px) {
-  .ourValues-container {
-    height: 2400px;
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:200px) {
+  .icon-title h3 {
+    font-size: 0.8rem;
+  }
+
+  .ourValues-title {
+    font-size: 1rem;
+  }
+
+  .value-card p {
+    font-size: 0.7rem;
+  }
+
+  .value-card button {
+    height: 27px;
+    min-width: 60px;
+    font-size: 0.5rem;
+  }
+
+  .cta-button{
+    min-width: auto;
+    height: 31px;
+    font-size: 0.6rem;
   }
 }

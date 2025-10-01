@@ -34,6 +34,13 @@
 
 .footer-email {
   font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.4s ease; 
+}
+
+.footer-email:hover {
+  color: #CDF26A;
 }
 
 .footer-socials {
@@ -97,6 +104,11 @@ footer hr {
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
+  transition: color 0.4s ease; 
+}
+
+.footer-bottom a:hover {
+  color: #CDF26A;
 }
 
 /* MOBILE: responsive  */
@@ -110,7 +122,7 @@ footer hr {
     flex-direction: column;
   }
 
-  .footer-right{
+  .footer-right {
     text-align: center;
   }
 }
@@ -123,6 +135,10 @@ footer hr {
 
   .footer-email {
     font-size: 0.8rem;
+  }
+
+  .footer-logo {
+    width: 100%;
   }
 
   .logo-wrapper {

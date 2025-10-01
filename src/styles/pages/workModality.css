@@ -81,11 +81,21 @@
     font-size: 0.8rem;
   }
 
-  .services-por-que-section {
-    padding: 10px 20px;
+  .modalidad-list span {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .services-modalidad-section {
+    height: auto;
   }
 
-  .services-por-que-section h2 {
-    font-size: 1.2rem;
+  .services-modalidad-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .modalidad-list span {
+    font-size: 0.9rem;
   }
 }
