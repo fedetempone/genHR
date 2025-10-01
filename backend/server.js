@@ -27,6 +27,11 @@ app.use(
 );
 app.use(express.json());
 
+app.get("/api/ping", (req, res) => {
+  console.log("Ping recibido!");
+  res.json({ ok: true });
+});
+
 // contacto de resend
 app.post("/api/contact", async (req, res) => {
   const { name, email, company, phone, message } = req.body;
