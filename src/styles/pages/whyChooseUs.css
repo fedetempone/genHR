@@ -1,15 +1,25 @@
-/* ===========================
-   POR QUÉ ELEGIRNOS
-=========================== */
 .services-por-que-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 600px;
   background-color: #fff;
   padding: 50px 20px;
-  text-align: center;
   overflow: hidden;
+}
+
+.why-choose-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* texto */
+.why-choose-content {
+  flex: 1;
+  min-width: 300px;
 }
 
 .services-por-que-section h2 {
@@ -18,27 +28,19 @@
   color: #171d35;
   margin-bottom: 30px;
   position: relative;
+  text-decoration: underline;
 }
 
-.services-por-que-section h2::after {
-  content: "";
-  display: block;
-  width: 10%;
-  height: 3px;
-  background-color: #cdf26a;
-  margin: 15px auto 0 auto;
-}
 
 /* Lista con iconos */
 .por-que-list {
   list-style: none;
   padding: 0;
   max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
   font-size: 1.1rem;
   color: #000;
   line-height: 1.6;
+  text-align: left;
 }
 
 .por-que-list li {
@@ -55,20 +57,120 @@
   margin-top: 4px;
 }
 
+/* imagen */
+.why-choose-image-wrapper {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-choose-image-desktop {
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* por defecto oculto en mobile */
+}
+
+.why-choose-static {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.why-choose-image-mobile {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 999px) {
+  .why-choose-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .services-por-que-section h2 {
+    font-size: 0.8rem;
+  }
+
+  .why-choose-wrapper {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .services-por-que-section {
+    padding: 0px;
+  }
+
+  .por-que-list {
+    font-size: 0.7rem;
+  }
+
+  .why-choose-image-desktop {
+    display: none;
+  }
+
+  .why-choose-image-mobile {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .why-choose-static {
+    display: block;
+  }
+
+  .why-choose-content {
+    text-align: center;
+    min-width: auto;
+  }
+
+  .why-choose-static {
+    width: 90%;
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .why-choose-static {
+    width: 50%;
+    height: 100%;
+  }
+}
 
 @media (max-width: 200px) {
-  .por-que-list {
-    font-size: 0.6rem;
+  .why-choose-static {
+    width: 35%;
+    height: 100%;
   }
-  
-  .services-por-que-section {
-    padding: 10px 20px;
+}
+
+
+
+
+/* A partir de 1000px activamos animación */
+@media (min-width: 999px) {
+  .why-choose-static {
+    display: none;
   }
 
-  .services-por-que-section h2 {
-    font-size: 1.2rem;
+  .why-choose-image-desktop {
+    display: block;
   }
-  .services-por-que-section {
-    height: auto;
+
+  .why-choose-image-mobile {
+    display: none;
   }
 }

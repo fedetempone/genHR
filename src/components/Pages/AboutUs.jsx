@@ -28,7 +28,7 @@ const AboutUs = () => {
     // desplazamiento horizontal del path
     gsap.to(pathRef.current, {
       duration: 2,
-      x: 100, 
+      x: 100,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut"
@@ -42,9 +42,9 @@ const AboutUs = () => {
           <h2 className="about-us-title">Quiénes Somos</h2>
           <p className="about-us-text">
             En genHR acompañamos a pymes y startups en la gestión y desarrollo de su talento.<br />
-            No somos una consultora tradicional: somos un equipo que combina experiencia y cercanía.<br />
+            No somos una consultora tradicional: <strong>somos un equipo que combina experiencia y cercanía</strong>.<br />
             Nos involucramos de verdad en el día a día de cada empresa, para diseñar soluciones que se ajustan a su realidad y evolucionan con ella.<br />
-            Contamos con más de 10 años de experiencia en Recursos Humanos, metodologías ágiles y cultura organizacional.<br />
+            Contamos con <strong>más de 10 años de experiencia en Recursos Humanos, metodologías ágiles y cultura organizacional</strong>.<br />
             Nuestro propósito es claro: impulsar el crecimiento de tu negocio poniendo a las personas en el centro.
           </p>
 
@@ -60,7 +60,7 @@ const AboutUs = () => {
                 />
               </clipPath>
             </defs>
-            <image xlinkHref="/img/AboutUs5.png" width="500" height="500" clipPath="url(#clip)" preserveAspectRatio="xMidYMid slice" />
+            <image xlinkHref="/img/AboutUs6.png" width="500" height="500" clipPath="url(#clip)" preserveAspectRatio="xMidYMid slice" />
           </svg>
 
           {/* imagen normal para mobile */}

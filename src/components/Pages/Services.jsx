@@ -66,8 +66,8 @@ const Services = () => {
                 "onboarding",
                 "liderazgo",
                 "cultura-y-clima-organizacional",
-                "offboarding-humanizado",
                 "gestion-y-desarrollo",
+                "offboarding-humanizado",
               ].map((key, i) => (
                 <motion.div
                   key={key}

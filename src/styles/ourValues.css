@@ -121,7 +121,8 @@
 .icon-title h3 {
   margin: 0;
   font-size: 1.3rem;
-  color: #fff;
+  color: #FAF1E5;
+  font-weight: bold;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -170,7 +171,7 @@
 .value-card p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #ddd;
+  color: #fff;
   text-align: left;
 }
 
