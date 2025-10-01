@@ -129,10 +129,14 @@
   margin: 0;
   font-size: 1.3rem;
   font-weight: bold;
-  color: #000000;
+  color: #fff;
   line-height: 1;
   display: flex;
   align-items: center;
+}
+
+.eighth-card h3{
+  color: #000000;
 }
 
 /* PULSE ICON */

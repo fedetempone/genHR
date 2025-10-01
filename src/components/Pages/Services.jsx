@@ -156,7 +156,7 @@ const Services = () => {
                 variants={cardVariants}
                 transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
               >
-                <div className="services-icon-title">
+                <div className="services-icon-title eighth-card">
                   <h3>¿Listo para el Próximo Paso?</h3>
                 </div>
                 <p>
@@ -175,8 +175,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-
       <WorkModality />
       <WhyChooseUs />
     </>
