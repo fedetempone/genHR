@@ -145,7 +145,15 @@
 
 @media (max-width: 400px) {
   .why-choose-static {
-    width: 50%;
+    width: 80%;
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 300px) {
+  .why-choose-static {
+    width: 60%;
     height: 100%;
   }
 }
