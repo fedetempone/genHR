@@ -64,7 +64,7 @@ const AboutUs = () => {
           </svg>
 
           {/* imagen normal para mobile */}
-          <img className="about-us-image-mobile" src="/img/AboutUs5.png" alt="Quiénes somos" />
+          <img className="about-us-image-mobile" src="/img/AboutUs6.png" alt="Quiénes somos" />
         </div>
       </div>
     </div>

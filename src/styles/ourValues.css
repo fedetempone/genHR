@@ -1,24 +1,43 @@
-/* .ourValues-container {
-  position: relative;
-  padding: 60px 20px;
-  text-align: center;
-  background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
-  overflow: hidden;
-  perspective: 1px;
-  height: 1000px;
-} */
 .ourValues-container {
   position: relative;
   padding: 60px 20px;
   text-align: center;
   background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
-  overflow: visible;
+  overflow: hidden; 
   perspective: 1px;
 }
 
 .values-placeholder {
   position: relative;
-  z-index: 0;
+  z-index: 2; 
+}
+
+/* ESTRELLAS DECORATIVAS */
+.stars-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+  align-items: center;
+  padding: 20px;
+  pointer-events: none;
+  z-index: 0; 
+}
+
+.stars-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-around; 
+  align-items: center;
+}
+
+.star-icon {
+  opacity: 0.8; 
+  filter: drop-shadow(0 0 5px rgba(183, 131, 239, 0.6)); 
 }
 
 .ourValues-title {
@@ -28,6 +47,7 @@
   margin-bottom: 40px;
   display: inline-block;
   color: #fff;
+  z-index: 2; 
 }
 
 .ourValues-title::after {
@@ -57,9 +77,8 @@
   will-change: transform;
   transition: transform 0.2s ease-out;
   pointer-events: none;
-  z-index: 1;
+  z-index: 1; /* Esto está entre las estrellas (0) y las tarjetas (2) */
 }
-
 
 .values-grid {
   display: grid;
@@ -77,7 +96,7 @@
   flex-direction: column;
   justify-content: center;
   min-height: 250px;
-  background: rgba(0, 0, 0, 0.09);
+  background: rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   padding: 22px;
   color: #fff;
@@ -85,6 +104,7 @@
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
+  z-index: 2; 
 }
 
 .value-card:hover {
@@ -121,16 +141,12 @@
 .icon-title h3 {
   margin: 0;
   font-size: 1.3rem;
-  color: #FAF1E5;
+  color: #faf1e5;
   font-weight: bold;
   line-height: 1;
   display: flex;
   align-items: center;
 }
-
-/* .icon-wrapper {
-  animation: pulse 2.5s infinite ease-in-out;
-} */
 
 @keyframes hoverPulse {
   0% {
@@ -156,7 +172,6 @@
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -199,11 +214,9 @@
   margin: 0px auto;
 }
 
-
-
 /* responsive */
 
-@media (max-width:999px) {
+@media (max-width: 999px) {
   .icon-title {
     flex-direction: column;
   }
@@ -217,15 +230,19 @@
     transform: none !important;
     pointer-events: auto;
   }
+
+  .ourValues-container {
+    padding: 110px 20px;
+  }
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .values-grid {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width:200px) {
+@media (max-width: 200px) {
   .icon-title h3 {
     font-size: 0.8rem;
   }
@@ -244,9 +261,21 @@
     font-size: 0.5rem;
   }
 
-  .cta-button{
+  .cta-button {
     min-width: auto;
     height: 31px;
     font-size: 0.6rem;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(15deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
   }
 }

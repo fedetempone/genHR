@@ -163,6 +163,16 @@
   margin-top: 0.5rem;
 }
 
+.form-privacy a{
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.form-privacy a:hover{
+  color: blue;
+  }
+   
+
  .contact-btn {
   font-family: inherit;
   font-size: 1.2rem;
@@ -233,6 +243,11 @@ input[type="checkbox"] {
   font-weight: bold;
   color: #000000;
   font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-extra a:hover{
+  color: #CDF26A;
 }
 
 .form-footer {

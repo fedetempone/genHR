@@ -13,6 +13,8 @@ import {
   UserCircleGear,
   UsersThree,
   SignOut,
+  Lightning,
+  Asterisk,
 } from "@phosphor-icons/react";
 
 const icons = {
@@ -57,6 +59,22 @@ const Services = () => {
 
       {/* SERVICES GRID */}
       <section className="services-grid-section">
+        {/* icono decorativo arriba izquierda */}
+        <Lightning
+          size={200}
+          weight="fill"
+          color="#CDF26A"
+          className="services-bg-icon top-left-icon"
+        />
+
+        {/* icono decorativo abajo derecha */}
+        <Asterisk
+          size={200}
+          weight="regular"
+          color="#B783EF"
+          className="services-bg-icon bottom-right-icon"
+        />
+
         <div className="services-values-wrapper">
           <div className="services-parallax-placeholder">
             <div className="services-grid">
@@ -111,7 +129,7 @@ const Services = () => {
                                 ? "Diseñamos procesos de salida claros y respetuosos."
                                 : "Diseñamos herramientas simples para potenciar y retener talento."}
                   </p>
-                  
+
                   <Link to={`/servicios/${key}`} key={key}>
                     <button className="service-button" style={{ "--clr": "#7808d0" }}>
                       <span className="service-button__icon-wrapper">
@@ -140,7 +158,7 @@ const Services = () => {
                           />
                         </svg>
                       </span>
-                     <span className="service-button__text">Ver Más</span>
+                      <span className="service-button__text">Ver Más</span>
                     </button>
                   </Link>
 

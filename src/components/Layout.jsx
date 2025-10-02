@@ -1,8 +1,9 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import IconScrollToTop from './IconScrollTop'
 
-const Layout = ({ children, darkMode = false, title = "Gen-HR | Consultora" }) => {
+const Layout = ({ children, title = "Gen-HR | Consultora" }) => {
   return (
     <>
       <Helmet>
@@ -22,6 +23,8 @@ const Layout = ({ children, darkMode = false, title = "Gen-HR | Consultora" }) =
 
       {/* footer */}
       <Footer />
+      {/* ICON SCROLL TO TOP */}
+      <IconScrollToTop /> 
     </>
   );
 };

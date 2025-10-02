@@ -6,6 +6,7 @@ import {
   RocketLaunch,
   Handshake,
   Lightbulb,
+  StarFour,
 } from "@phosphor-icons/react";
 import "../styles/ourValues.css";
 
@@ -47,6 +48,20 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+const generateStars = (numStars) => {
+  return Array.from({ length: numStars }).map((_, i) => ({
+    id: i,
+    top: Math.random() * 100,
+    left: Math.random() * 100,
+    size: 12 + Math.random() * 10,
+    opacity: 0.5 + Math.random() * 0.5,
+    floatDuration: 4 + Math.random() * 4,
+    floatDistance: 5 + Math.random() * 10, 
+  }));
+};
+
+const stars = generateStars(50);
+
 const OurValues = () => {
   const parallaxRef = useRef(null);
 
@@ -58,13 +73,33 @@ const OurValues = () => {
         parallaxRef.current.style.transform = `translateY(${scrollY * 0.08}px)`;
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section className="ourValues-container">
+      {/* estrellas flotantes */}
+      <div className="stars-grid">
+        {stars.map((star) => (
+          <StarFour
+            key={star.id}
+            size={star.size}
+            weight="fill"
+            color="#B783EF"
+            className="star-icon"
+            style={{
+              position: "absolute",
+              top: `${star.top}%`,
+              left: `${star.left}%`,
+              opacity: star.opacity,
+              animation: `float ${star.floatDuration}s ease-in-out infinite alternate`,
+              transform: `translateY(0px)`,
+            }}
+          />
+        ))}
+      </div>
+
       <h2 className="ourValues-title">Nuestros Valores</h2>
 
       <div className="values-wrapper">

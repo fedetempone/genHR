@@ -1,35 +1,4 @@
 /* hero del BlogDetails (reutilizo algunas clases de Blog.jsx para que quede reutilizable y no repetir estilos) */
-.blog-hero {
-    background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
-    min-height: 750px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.blog-hero-title {
-    font-size: 3rem;
-    color: #fff;
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-}
-
-.blog-hero-title::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 35%;
-    height: 3px;
-    background: #cdf26a;
-    top: 56px;
-    left: 0;
-    right: 0;
-    margin: 50px auto auto auto;
-}
 
 .blog-hero-description-container {
     padding: 100px;
@@ -41,6 +10,31 @@
 .blogdetails-hero-container h1 {
     font-size: 2rem;
 }
+
+/* link de volver atras */
+.blog-back-link {
+  background-color: #fff;
+  padding: 1rem 2rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #171D35;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #CDF26A;
+}
+
+.back-icon {
+  color: #CDF26A;
+}
+
 
 /* contenido detallado del post */
 .blog-details-content {

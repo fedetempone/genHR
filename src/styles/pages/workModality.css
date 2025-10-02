@@ -64,6 +64,22 @@
   color: #fff;
 }
 
+
+
+@media (max-width: 500px) {
+  .services-modalidad-section {
+    height: auto;
+  }
+
+  .services-modalidad-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .modalidad-list span {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 200px) {
   .services-modalidad-section {
     padding: 5px 7px;
@@ -83,19 +99,5 @@
 
   .modalidad-list span {
     font-size: 0.6rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .services-modalidad-section {
-    height: auto;
-  }
-
-  .services-modalidad-section h2 {
-    font-size: 1.4rem;
-  }
-
-  .modalidad-list span {
-    font-size: 0.9rem;
   }
 }

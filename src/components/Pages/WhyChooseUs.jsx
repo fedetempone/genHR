@@ -1,33 +1,3 @@
-// import { CheckCircle } from "@phosphor-icons/react";
-// import "../../styles/pages/whyChooseUs.css";
-
-// const WhyChooseUs = () => {
-//   return (
-//     <section className="services-por-que-section">
-//       <h2>¿Por qué Elegirnos?</h2>
-//       <ul className="por-que-list">
-//         <li>
-//           <CheckCircle size={24} weight="fill" color="#CDF26A" />
-//           <span>Entendemos a pymes y startups.</span>
-//         </li>
-//         <li>
-//           <CheckCircle size={24} weight="fill" color="#CDF26A" />
-//           <span>Combinamos estrategia + acción.</span>
-//         </li>
-//         <li>
-//           <CheckCircle size={24} weight="fill" color="#CDF26A" />
-//           <span>Soluciones simples y aplicables.</span>
-//         </li>
-//         <li>
-//           <CheckCircle size={24} weight="fill" color="#CDF26A" />
-//           <span>Nos integramos como parte del equipo.</span>
-//         </li>
-//       </ul>
-//     </section>
-//   );
-// };
-
-// export default WhyChooseUs;
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle } from "@phosphor-icons/react";
 import "../../styles/pages/whyChooseUs.css";
@@ -119,14 +89,14 @@ const WhyChooseUs = () => {
 
         shapes.forEach((shape) => {
           tl.to(pathRef.current, {
-            duration: 2.5, // ⬅️ más lento
+            duration: 2.5, 
             morphSVG: shape,
             ease: "sine.inOut",
           });
         });
 
         gsap.to(pathRef.current, {
-          duration: 4, // ⬅️ también más lento el movimiento horizontal
+          duration: 4, 
           x: 50,
           repeat: -1,
           yoyo: true,
@@ -149,7 +119,6 @@ const WhyChooseUs = () => {
       stopAnimation();
     }
 
-    // 🔸 Listener para manejar resize en vivo
     const handleResize = () => {
       const shouldAnimate = window.innerWidth > 500;
       setIsAnimating(shouldAnimate);
@@ -188,14 +157,12 @@ const WhyChooseUs = () => {
         </div>
 
         <div className="why-choose-image-wrapper">
-          {/* Imagen estática (visible hasta 500px) */}
           <img
             className="why-choose-static"
             src="/img/whychooseus.png"
             alt="Por qué elegirnos"
           />
 
-          {/* Imagen con morphing (visible desde 501px) */}
           <svg
             className="why-choose-image-desktop"
             viewBox="0 0 500 500"
@@ -218,12 +185,6 @@ const WhyChooseUs = () => {
             />
           </svg>
 
-          {/* Imagen mobile alternativa */}
-          {/* <img
-            className="why-choose-image-mobile"
-            src="/img/WhyChooseUsMobile.png"
-            alt="Por qué elegirnos"
-          /> */}
         </div>
       </div>
     </section>

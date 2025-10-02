@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft } from "@phosphor-icons/react";
 import blogContentMap from "../../data/blogContentMap.js";
 import Waves from "../Waves.jsx";
 import "../../styles/pages/blogDetails.css";
@@ -19,13 +20,21 @@ const BlogDetails = () => {
       </section>
       <Waves marginTop={-80} marginBottom={-55} />
 
+      {/* volver atras */}
+      <div className="blog-back-link">
+        <Link to="/blog" className="back-link">
+          <ArrowLeft size={20} weight="bold" className="back-icon" />
+          <span>Atrás</span>
+        </Link>
+      </div>
+
       {/* contenido descriptivo */}
       <section className="blog-details-content">
         <div className="blog-hero-description-container">
           <h2>{post.subtitle}</h2>
         </div>
         <div className="blog-details-text">
-          {post.description} 
+          {post.description}
         </div>
       </section>
     </div>
@@ -33,4 +42,3 @@ const BlogDetails = () => {
 };
 
 export default BlogDetails;
-

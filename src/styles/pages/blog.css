@@ -1,4 +1,5 @@
 /* hero */
+/* hero del BlogDetails (reutilizo algunas clases de Blog.jsx para que quede reutilizable y no repetir estilos) */
 .blog-hero {
     background: linear-gradient(to bottom, #171d35 0%, #8c63c8 60%, #b783ef 100%);
     min-height: 750px;

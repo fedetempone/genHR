@@ -11,11 +11,14 @@ const Nav = () => {
 
   // bloquear scroll cuando abro menu
   useEffect(() => {
+    document.documentElement.style.overflow = isMenuOpen ? "hidden" : "auto";
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+
     return () => {
-      document.body.style.overflow = "auto";
+        document.documentElement.style.overflow = "auto";
+        document.body.style.overflow = "auto";
     };
-  }, [isMenuOpen]);
+}, [isMenuOpen]);
 
   // cerrar menu si la ventana se pasa de los 999px 
   useEffect(() => {
