@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import IconScrollToTop from './IconScrollTop'

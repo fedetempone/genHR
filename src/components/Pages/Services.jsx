@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import WorkModality from "./WorkModality";
 import WhyChooseUs from "./WhyChooseUs";
 import Waves from '../Waves'
@@ -49,6 +50,23 @@ const Services = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Servicios | GenHR</title>
+        <meta
+          name="description"
+          content="Conocé los servicios de GenHR: atracción de talento, onboarding, liderazgo, cultura organizacional y más."
+        />
+        <link
+          rel="me"
+          href="https://www.linkedin.com/company/somosgen-hr/"
+          title="LinkedIn"
+        />
+        <link
+          rel="me"
+          href="https://www.instagram.com/somosgen.hr/"
+          title="Instagram"
+        />
+      </Helmet>
       {/* HERO */}
       <section className="services-hero-section">
         <div className="services-hero-title-container">

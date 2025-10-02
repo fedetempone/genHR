@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Waves from "../Waves";
+import { Helmet } from "react-helmet-async";
 import "../../styles/pages/blog.css";
 
 const Blog = () => {
@@ -66,6 +67,38 @@ const Blog = () => {
 
   return (
     <>
+    <Helmet>
+        <title>Blog | GenHR</title>
+        <meta
+          name="description"
+          content="Descubrí artículos sobre Marca Empleadora, Employee Experience y fidelización de talento en startups y pymes."
+        />
+        <meta property="og:title" content="Blog | GenHR" />
+        <meta
+          property="og:description"
+          content="Descubrí artículos sobre Marca Empleadora, Employee Experience y fidelización de talento en startups y pymes."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/img/WhyEmployerBrandMatters.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog | GenHR" />
+        <meta
+          name="twitter:description"
+          content="Descubrí artículos sobre Marca Empleadora, Employee Experience y fidelización de talento en startups y pymes."
+        />
+        <meta name="twitter:image" content="/img/WhyEmployerBrandMatters.png" />
+        <link
+          rel="me"
+          href="https://www.linkedin.com/company/somosgen-hr/"
+          title="LinkedIn"
+        />
+        <link
+          rel="me"
+          href="https://www.instagram.com/somosgen.hr/"
+          title="Instagram"
+        />
+      </Helmet>
+
       {/* hero */}
       <section className="blog-hero">
         <div className="blog-hero-title-container">

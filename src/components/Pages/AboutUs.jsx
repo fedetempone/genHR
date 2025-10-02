@@ -36,38 +36,40 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="about-us-wrapper">
-      <div className="about-us-container">
-        <div className="about-us-content">
-          <h2 className="about-us-title">Quiénes Somos</h2>
-          <p className="about-us-text">
-            En genHR acompañamos a pymes y startups en la gestión y desarrollo de su talento.<br />
-            No somos una consultora tradicional: <strong>somos un equipo que combina experiencia y cercanía</strong>.<br />
-            Nos involucramos de verdad en el día a día de cada empresa, para diseñar soluciones que se ajustan a su realidad y evolucionan con ella.<br />
-            Contamos con <strong>más de 10 años de experiencia en Recursos Humanos, metodologías ágiles y cultura organizacional</strong>.<br />
-            Nuestro propósito es claro: impulsar el crecimiento de tu negocio poniendo a las personas en el centro.
-          </p>
+    <>
+      <div className="about-us-wrapper">
+        <div className="about-us-container">
+          <div className="about-us-content">
+            <h2 className="about-us-title">Quiénes Somos</h2>
+            <p className="about-us-text">
+              En genHR acompañamos a pymes y startups en la gestión y desarrollo de su talento.<br />
+              No somos una consultora tradicional: <strong>somos un equipo que combina experiencia y cercanía</strong>.<br />
+              Nos involucramos de verdad en el día a día de cada empresa, para diseñar soluciones que se ajustan a su realidad y evolucionan con ella.<br />
+              Contamos con <strong>más de 10 años de experiencia en Recursos Humanos, metodologías ágiles y cultura organizacional</strong>.<br />
+              Nuestro propósito es claro: impulsar el crecimiento de tu negocio poniendo a las personas en el centro.
+            </p>
 
-        </div>
-        <div className="about-us-image-wrapper">
-          {/* imagen con clip-path para desktop */}
-          <svg className="about-us-image-desktop" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <clipPath id="clip">
-                <path
-                  ref={pathRef}
-                  d="M362.4,59.2c41.3,31.7,73.4,69.5,88.9,121.7c16.1,54.2,2.8,111.4-23.7,163.6c-27.1,53.2-66.2,96.3-118.8,124.6c-54.2,29.3-116,40.6-177.3,27.1C9.6,488.9-51.7,422.3-51.7,351.6c0-70.6,35.2-126,89.4-171.1c54.7-45.6,117.8-71.1,192.5-98C274.5,6.1,321.1,28.6,362.4,59.2z"
-                />
-              </clipPath>
-            </defs>
-            <image xlinkHref="/img/AboutUs6.png" width="500" height="500" clipPath="url(#clip)" preserveAspectRatio="xMidYMid slice" />
-          </svg>
+          </div>
+          <div className="about-us-image-wrapper">
+            {/* imagen con clip-path para desktop */}
+            <svg className="about-us-image-desktop" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <clipPath id="clip">
+                  <path
+                    ref={pathRef}
+                    d="M362.4,59.2c41.3,31.7,73.4,69.5,88.9,121.7c16.1,54.2,2.8,111.4-23.7,163.6c-27.1,53.2-66.2,96.3-118.8,124.6c-54.2,29.3-116,40.6-177.3,27.1C9.6,488.9-51.7,422.3-51.7,351.6c0-70.6,35.2-126,89.4-171.1c54.7-45.6,117.8-71.1,192.5-98C274.5,6.1,321.1,28.6,362.4,59.2z"
+                  />
+                </clipPath>
+              </defs>
+              <image xlinkHref="/img/AboutUs6.png" width="500" height="500" clipPath="url(#clip)" preserveAspectRatio="xMidYMid slice" />
+            </svg>
 
-          {/* imagen normal para mobile */}
-          <img className="about-us-image-mobile" src="/img/AboutUs6.png" alt="Quiénes somos" />
+            {/* imagen normal para mobile */}
+            <img className="about-us-image-mobile" src="/img/AboutUs6.png" alt="Quiénes somos" />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

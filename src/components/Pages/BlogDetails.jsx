@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "@phosphor-icons/react";
+import { Helmet } from "react-helmet-async";
 import blogContentMap from "../../data/blogContentMap.js";
 import Waves from "../Waves.jsx";
 import "../../styles/pages/blogDetails.css";
@@ -12,6 +13,23 @@ const BlogDetails = () => {
 
   return (
     <div className="blog-details">
+      <Helmet>
+        <title>{post.title} | GenHR</title>
+        <meta
+          name="description"
+          content={post.description}
+        />
+        <link
+          rel="me"
+          href="https://www.linkedin.com/company/somosgen-hr/"
+          title="LinkedIn"
+        />
+        <link
+          rel="me"
+          href="https://www.instagram.com/somosgen.hr/"
+          title="Instagram"
+        />
+      </Helmet>
       {/* hero */}
       <section className="blog-hero blogdetails-hero">
         <div className="blog-hero-title-container blogdetails-hero-container">

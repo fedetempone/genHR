@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "../../styles/pages/contactForm.css";
 import Waves from "../Waves";
 import Swal from "sweetalert2";
@@ -98,6 +99,23 @@ export const Contact = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contacto | GenHR</title>
+        <meta
+          name="description"
+          content="Contactanos para potenciar tu equipo y escalar tu negocio con gen HR. Completá el formulario y conversemos."
+        />
+        <link
+          rel="me"
+          href="https://www.linkedin.com/company/somosgen-hr/"
+          title="LinkedIn"
+        />
+        <link
+          rel="me"
+          href="https://www.instagram.com/somosgen.hr/"
+          title="Instagram"
+        />
+      </Helmet>
       <section className="contact-hero">
         <div className="contact-fullpage-hero-title">
           <h1 className="contact-hero-title">Contacto</h1>
