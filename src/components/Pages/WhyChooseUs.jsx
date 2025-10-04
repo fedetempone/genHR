@@ -159,7 +159,7 @@ const WhyChooseUs = () => {
         <div className="why-choose-image-wrapper">
           <img
             className="why-choose-static"
-            src="/img/whychooseus.png"
+            src="/img/whychooseus2.png"
             alt="Por qué elegirnos"
           />
 
@@ -177,7 +177,7 @@ const WhyChooseUs = () => {
               </clipPath>
             </defs>
             <image
-              xlinkHref="/img/whychooseus.png"
+              xlinkHref="/img/whychooseus2.png"
               width="500"
               height="500"
               clipPath="url(#whyClip)"

@@ -86,7 +86,6 @@
   display: block;
   width: 90%;
   height: 90%;
-  border-radius: 100%;
 }
 
 .why-choose-image-mobile {
@@ -97,17 +96,39 @@
 }
 
 /* RESPONSIVE */
+
 /* ESTE ES MAX WIDTH 999PX */
 @media (max-width: 999px) {
   .why-choose-wrapper {
     flex-direction: column;
   }
+
+  .why-choose-static {
+    display: block;
+    margin-bottom: 20px;
+
+    /* animacion de zoom */
+    animation: zoomMobile 5s ease-in-out infinite alternate;
+    transform-origin: center center;
+  }
+
+  @keyframes zoomMobile {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15); 
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 }
 
 /* ESTE ES MIN WIDTH 999PX */
+
 /* a partir de 1000px activo animacion */
 @media (min-width: 999px) {
-
   .why-choose-static {
     display: none;
   }

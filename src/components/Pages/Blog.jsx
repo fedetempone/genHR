@@ -10,28 +10,32 @@ const Blog = () => {
       id: 1,
       title: "¿Por qué la Marca Empleadora es clave para pymes y startups en 2025?",
       slug: "por-que-la-marca-empleadora-es-clave-para-pymes-y-startups",
-      description: "En un mercado donde el talento elige, tu Marca Empleadora ya no es un “plus”: es tu carta de presentación. Si liderás una pyme o startup, sabés que no contás con una megaestructura, pero sí con algo más valioso: personas comprometidas, ideas potentes y mucho por construir",
+      description:
+        "En un mercado donde el talento elige, tu Marca Empleadora ya no es un “plus”: es tu carta de presentación. Si liderás una pyme o startup, sabés que no contás con una megaestructura, pero sí con algo más valioso: personas comprometidas, ideas potentes y mucho por construir",
       img: "/img/WhyEmployerBrandMatters.png",
     },
     {
       id: 2,
       title: "El impacto real de cada paso: repensar la experiencia del candidato",
       slug: "el-impacto-real-de-cada-instancia-en-la-experiencia-del-candidato",
-      description: "En un contexto donde los colaboradores tienen múltiples alternativas para elegir dónde desarrollar su carrera, la experiencia del candidato pasó a convertirse en un factor clave que refleja la identidad de la marca empleadora.",
+      description:
+        "En un contexto donde los colaboradores tienen múltiples alternativas para elegir dónde desarrollar su carrera, la experiencia del candidato pasó a convertirse en un factor clave que refleja la identidad de la marca empleadora.",
       img: "/img/CandidateExperienceImpact.png",
     },
     {
       id: 3,
       title: "La experiencia del colaborador crea marca que inspira: una ventaja clave para startups y pymes",
       slug: "la-experiencia-del-colabarador-crea-marcas-que-insipiran",
-      description: "Cuando pensamos en construir una marca poderosa, solemos mirar hacia fuera: campañas de marketing, redes sociales, relaciones públicas. Pero ¿y si te dijéramos que la marca más auténtica y duradera se construye desde adentro? ",
+      description:
+        "Cuando pensamos en construir una marca poderosa, solemos mirar hacia fuera: campañas de marketing, redes sociales, relaciones públicas. Pero ¿y si te dijéramos que la marca más auténtica y duradera se construye desde adentro? ",
       img: "/img/EmployeeExperienceInsights.png",
     },
     {
       id: 4,
       title: "Employee Experience: Cómo Fidelizar Talento en Tiempos de Cambio",
       slug: "como-fidelizar-al-talento-en-tiempos-de-cambios-constante",
-      description: "El trabajo ya no se entiende como antes. En pocos años, vivimos transformaciones profundas: equipos distribuidos en distintas partes del mundo, la irrupción de la IA en las tareas cotidianas y una nueva manera de pensar el equilibrio entre lo personal y lo profesional. Todo esto obligó a repensar la relación entre las personas y las organizaciones.",
+      description:
+        "El trabajo ya no se entiende como antes. En pocos años, vivimos transformaciones profundas: equipos distribuidos en distintas partes del mundo, la irrupción de la IA en las tareas cotidianas y una nueva manera de pensar el equilibrio entre lo personal y lo profesional. Todo esto obligó a repensar la relación entre las personas y las organizaciones.",
       img: "/img/RetainTalentInChange.png",
     },
   ];
@@ -43,12 +47,12 @@ const Blog = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const delay = entry.target.dataset.index * 100; // tiempo que transcurre entre la visibilidad de las imagenes
+            const delay = entry.target.dataset.index * 100;
             setTimeout(() => {
               entry.target.classList.add("show");
             }, delay);
           } else {
-            entry.target.classList.remove("show"); // saco y pongo la clase que permite volver a ver la animacion al scrollear
+            entry.target.classList.remove("show");
           }
         });
       },
@@ -67,7 +71,7 @@ const Blog = () => {
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>Blog | GenHR</title>
         <meta
           name="description"
@@ -110,7 +114,7 @@ const Blog = () => {
       {/* contenido descriptivo del blog */}
       <section className="blog-content">
         <div className="blog-title-container">
-          <h2 className="blog-title">Nuestros Últimos Artículos</h2>
+          <h2 className="blog-title">Nuestros últimos artículos</h2>
         </div>
         <div className="blog-grid">
           {posts.map((post, index) => (
@@ -119,7 +123,18 @@ const Blog = () => {
               className={`blog-item ${index % 2 === 0 ? "left" : "right"}`}
             >
               <img src={post.img} alt={post.title} className="blog-img" />
-              <h2 className="blog-item-title">{post.title}</h2>
+              <h2 className="blog-item-title">
+                {index === 0 ? (
+                  <>
+                    ¿Por qué la{" "}
+                    <span style={{ color: "#CDF26A", fontWeight: "bold"
+                    }}>Marca Empleadora</span>{" "}
+                    es clave para pymes y startups en 2025?
+                  </>
+                ) : (
+                  post.title
+                )}
+              </h2>
               <p className="blog-item-desc">{post.description}</p>
               <Link
                 to={`/blog/${post.slug}`}
