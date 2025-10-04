@@ -142,7 +142,7 @@ export const Contact = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Tu Nombre"
+                placeholder="Nombre y Apellido"
                 required
                 value={formData.name}
                 onChange={handleChange}
@@ -151,7 +151,7 @@ export const Contact = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="Tu@empresa.com"
+                placeholder="Tu email"
                 required
                 value={formData.email}
                 onChange={handleChange}
@@ -163,7 +163,7 @@ export const Contact = () => {
               <input
                 type="text"
                 name="company"
-                placeholder="Nombre de la empresa"
+                placeholder="Empresa"
                 required
                 value={formData.company}
                 onChange={handleChange}
@@ -172,7 +172,7 @@ export const Contact = () => {
               <input
                 type="tel"
                 name="phone"
-                placeholder="011 ..."
+                placeholder="Tu numero de teléfono"
                 value={formData.phone}
                 onChange={handleChange}
                 title="Ingresá un número de teléfono válido, ej: +54 11 12345678"
@@ -184,7 +184,7 @@ export const Contact = () => {
             <p className="input-label left">¿En qué te ayudamos?</p>
             <textarea
               name="message"
-              placeholder="Contanos brevemente tu necesidad"
+              placeholder=""
               required
               value={formData.message}
               onChange={handleChange}
