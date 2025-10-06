@@ -26,9 +26,81 @@ export const Contact = () => {
     }));
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   if (!formData.privacy) {
+  //     Swal.fire({
+  //       title: "Oops...",
+  //       text: "Debés aceptar las políticas de privacidad.",
+  //       icon: "warning",
+  //       confirmButtonColor: "#CDF26A",
+  //     });
+  //     return;
+  //   }
+
+  //   const cleanPhone = formData.phone.replace(/[^\d+]/g, "");
+  //   if (!/^\+?\d{8,15}$/.test(cleanPhone)) {
+  //     Swal.fire({
+  //       title: "Teléfono inválido",
+  //       text: "Por favor ingresá un número válido",
+  //       icon: "warning",
+  //       confirmButtonColor: "#CDF26A",
+  //     });
+  //     return;
+  //   }
+
+  //   try {
+  //     setLoading(true);
+  //     const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     if (res.ok) {
+  //       confetti({
+  //         particleCount: 200,
+  //         spread: 160,
+  //         origin: { y: 0.6 },
+  //         colors: ["#CDF26A", "#ffffff", "#FFD700"],
+  //       });
+
+  //       Swal.fire({
+  //         title: "¡Mensaje enviado!",
+  //         text: "Gracias por contactarnos. Te responderemos pronto.",
+  //         icon: "success",
+  //         confirmButtonColor: "#CDF26A",
+  //       });
+
+  //       setFormData({
+  //         name: "",
+  //         email: "",
+  //         company: "",
+  //         phone: "",
+  //         message: "",
+  //         privacy: false,
+  //       });
+  //     } else {
+  //       throw new Error("No se pudo enviar");
+  //     }
+  //   } catch (err) {
+  //     Swal.fire({
+  //       title: "Error",
+  //       text: "Hubo un problema al enviar el mensaje.",
+  //       icon: "error",
+  //       confirmButtonColor: "#CDF26A",
+  //     });
+  //     console.error(err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // --- 1. Validar políticas ---
     if (!formData.privacy) {
       Swal.fire({
         title: "Oops...",
@@ -39,23 +111,63 @@ export const Contact = () => {
       return;
     }
 
-    const cleanPhone = formData.phone.replace(/[^\d+]/g, "");
-    if (!/^\+?\d{8,15}$/.test(cleanPhone)) {
+    // --- 2. Validar email ---
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
       Swal.fire({
-        title: "Teléfono inválido",
-        text: "Por favor ingresá un número válido",
+        title: "Email inválido",
+        text: "Por favor ingresá un email válido.",
         icon: "warning",
         confirmButtonColor: "#CDF26A",
       });
       return;
     }
 
+    // --- 3. Validar teléfono ---
+    const cleanPhone = formData.phone.replace(/[^\d+]/g, "");
+    if (!/^\+?\d{8,15}$/.test(cleanPhone)) {
+      Swal.fire({
+        title: "Teléfono inválido",
+        text: "Por favor ingresá un número válido.",
+        icon: "warning",
+        confirmButtonColor: "#CDF26A",
+      });
+      return;
+    }
+
+    // --- 4. Validar que no haya links ni HTML en los campos ---
+    const linkOrHtmlRegex = /(https?:\/\/|www\.|<[^>]*>)/i;
+    const fieldsToValidate = ["name", "company", "message"];
+
+    for (const field of fieldsToValidate) {
+      if (linkOrHtmlRegex.test(formData[field])) {
+        Swal.fire({
+          title: "Contenido no permitido",
+          text: `El campo "${field}" contiene enlaces o etiquetas no permitidas.`,
+          icon: "error",
+          confirmButtonColor: "#CDF26A",
+        });
+        return;
+      }
+    }
+
+    // --- 5. Opcional: sanitizar el texto ---
+    const sanitizedData = {
+      ...formData,
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      company: formData.company.trim(),
+      phone: cleanPhone.trim(),
+      message: formData.message.trim(),
+    };
+
+    // --- 6. Enviar ---
     try {
       setLoading(true);
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(sanitizedData),
       });
 
       if (res.ok) {
@@ -96,6 +208,7 @@ export const Contact = () => {
       setLoading(false);
     }
   };
+
 
   return (
     <>
