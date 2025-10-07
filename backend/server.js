@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import fetch from "node-fetch"; // API de resend
 import { validateContact } from "./middleware/ValidateContact.js";
+import { validateCaptcha } from "./middleware/ValidateCaptcha.js";
+
 
 dotenv.config();
 
@@ -47,7 +49,7 @@ const fetchWithTimeoutForUser = (url, options, timeout = 8000) => {
 };
 
 // contacto
-app.post("/api/contact", validateContact, async (req, res) => {
+app.post("/api/contact", validateCaptcha, validateContact, async (req, res) => {
   const { name, email, company, phone, message } = req.body;
 
   if (!name || !email || !message) {
