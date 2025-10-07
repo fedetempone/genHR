@@ -108,6 +108,15 @@ Mensaje: ${message}
   }
 });
 
+// redirect simple del dominio viejo
+app.use((req, res, next) => {
+  if (req.hostname === "genhr.onrender.com") {
+    return res.redirect(301, "https://genhr.com.ar" + req.originalUrl);
+  }
+  next();
+});
+
+
 // middleware de manejo de errores
 app.use((err, req, res, next) => {
   if (err.message === "Not allowed by CORS") {
