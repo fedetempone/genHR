@@ -160,19 +160,6 @@ app.use(
   })
 );
 
-// --- REDIRECT DEL DOMINIO VIEJO ---
-app.use((req, res, next) => {
-  const host = req.headers["x-forwarded-host"] || req.hostname;
-
-  if (host.includes("genhr.onrender.com")) {
-    const target = "https://genhr.com.ar" + req.originalUrl;
-    console.log(`Redirecting ${host} -> ${target}`);
-    return res.redirect(301, target);
-  }
-
-  next();
-});
-
 app.use(express.json());
 
 // --- PING PARA QUE NO SE DUERMA RENDER ---
