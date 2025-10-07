@@ -1,0 +1,42 @@
+[33meb94524[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m feat: add /api/ping endpoint that always returns 200 to keep backend awake
+[33m77b0671[m feat: add /api/ping endpoint that always returns 200 to keep backend awake
+[33m655a607[m Testing redirect from old Render domain to new custom domain
+[33m98bf73f[m Testing redirect from old Render domain to new custom domain
+[33m6f2eee1[m Redirect users from old Render domain to custom domain
+[33m065d8bb[m Implemented CAPTCHA with responsive styling
+[33mf2b8f32[m Add contact form validation, CORS updates, and Resend email timeout handling with user-friendly messages
+[33meac5fea[m Add contact form validation, CORS updates, and Resend email timeout handling with user-friendly messages
+[33mffd4f8d[m update email input placeholder text
+[33m1d49dd1[m cleanup: remove unused image files
+[33m0921776[m create sitemap for google search
+[33m1e0570e[m create sitemap for google search
+[33m4b632ff[m verify domain in google
+[33m417a005[m feat: add animations to Who We Are and Why Choose Us images, update some titles, and adjust blog responsive layout
+[33m632832e[m feat: integrate react-helmet-async for SEO in MeetUs page
+[33m3f612bd[m Update visuals and navigation: change About image, update backgrounds in Services and Values, add scroll-to-top and back buttons, fix general styles and mobile menu overflow
+[33m0519eec[m feat: adjust services image size
+[33m6ece443[m feat: add bold text to About section, update background in About image, change titles color in Values, update Services cards and buttons colors, and redesign Why Choose Us with new image and layout
+[33m7be9f89[m Add /api/ping endpoint to keep backend awake and ensure CORS works correctly
+[33m2f2afbe[m fix: change title color of 8th card for better readability
+[33mca200bc[m fix: change title color of 8th card for better readability
+[33m237ee38[m fix: set Services container width to 1200px for better visibility
+[33mf134de1[m feat: update Services page with new buttons/animations, responsive adjustments for Services and Values, update contact form email subject per client request, fix footer styles
+[33m1d706fc[m Switch backend email sending to Resend API instead of Gmail Workspace; added RESEND_API_KEY as environment variable
+[33mfdc5637[m Refactor visual structure and components in Services section:moved (Work Modalities) and (Why Choose Us) out of Services into separate components for clearer layout.Added new server setup using Workspace for handling contact form emails.
+[33m6c90530[m feat: integrate MailerSend for contact form with reply-to
+[33md32cc9a[m feat: integrate MailerSend for contact form with reply-to
+[33m62f849e[m install node-fetch
+[33ma6ffadc[m feat: switch contact form backend to MailerSend API instead of SMTP
+[33m4008cdb[m feat: integrate MailerSend SMTP for contact form emails using Nodemailer
+[33m113e2ae[m debbuging errors
+[33m1866789[m debbuging errors
+[33mbdace74[m optimizaztion of viteconfig
+[33mb0151ca[m Refactor backend: remove frontend static handling and React routes, keep only contact API
+[33m4787c47[m uninstall router
+[33ma5b40f5[m Update server.js to correctly serve frontend from root dist folder on Render
+[33me23e6e7[m Adjust images for responsive layout, add loading state in contact section, and implement contact backend with server running and ready for Render deployment
+[33mafa0e96[m Update UI and content across site
+[33m1dac0d7[m feat: add new blog section with images and responsive improvements
+[33mbe1d271[m Update Home and site-wide UI: hero, navigation, footer, and services page
+[33mea8384a[m Update package.json for Netlify deployment
+[33m85f327a[m Project setup for HR company GenHR

@@ -34,8 +34,8 @@ app.use(express.json());
 
 // hago ping para que no se duerma render
 app.get("/api/ping", (req, res) => {
-  console.log("Ping recibido!");
-  res.json({ ok: true });
+  console.log("Ping recibido!", new Date().toLocaleString());
+  res.status(200).send("pong");
 });
 
 // fetch con timeout para el usuario, si no se manda el mail en 8seg tira un error pero por d etras lo trata de enviar igual
