@@ -30,6 +30,14 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  const host = req.headers["x-forwarded-host"] || req.hostname;
+  if (host === "genhr.onrender.com") {
+    return res.redirect(301, "https://genhr.com.ar" + req.originalUrl);
+  }
+  next();
+});
+
 app.use(express.json());
 
 // hago ping para que no se duerma render
@@ -107,15 +115,6 @@ Mensaje: ${message}
     }
   }
 });
-
-// redirect simple del dominio viejo
-app.use((req, res, next) => {
-  if (req.hostname === "genhr.onrender.com") {
-    return res.redirect(301, "https://genhr.com.ar" + req.originalUrl);
-  }
-  next();
-});
-
 
 // middleware de manejo de errores
 app.use((err, req, res, next) => {
