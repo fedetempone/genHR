@@ -15,6 +15,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://genhr.onrender.com",
   "https://genhr.com.ar",
+  "https://www.genhr.com.ar",
 ];
 
 app.use(
